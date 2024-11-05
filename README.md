@@ -6,7 +6,7 @@ Download/clone the source code
 ```
 git clone https://github.com/EESTECXanthi/jobfair
 ```
-Install dependancies 
+Install dependencies 
 ```
 npm i
 ```
