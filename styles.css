@@ -1473,7 +1473,6 @@ pointer-events: none;
         z-index: 9999;
         justify-content: center;
         align-items: center;
-        padding-bottom: 1000% !important;
     }
     .modal-content{
         width: 90% !important;
@@ -1494,7 +1493,6 @@ pointer-events: none;
         z-index: 9999;
         justify-content: center;
         align-items: center;
-        padding-bottom: 1000% !important;
     }
     
 
