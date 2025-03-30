@@ -531,8 +531,8 @@ button.next:hover {
 }
 
 body.modal-open {
-    overflow: hidden;
-    height: 100vh;
+    overflow: hidden !important;
+    height: 100vh !important;
 }
 
 /* Basic modal overlay (hidden by default) */
@@ -1460,15 +1460,39 @@ pointer-events: none;
             height: auto !important;
         }
 
-    .modal-overlay,
-    .sponsor-modal-overlay{
-        max-width: 390px !important;
-        margin: 0 !important;
+    .modal-overlay{
+        display: none;
+        max-width: 100% !important;
+        position: absolute;
+        height: 400% !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.7);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
     }
     .modal-content{
         width: 90% !important;
         height: auto !important;
         margin: 0 !important;
+    }
+
+    .sponsor-modal-overlay{
+        display: none;
+        max-width: 100% !important;
+        position: absolute;
+        height: 550% !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.7);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
     }
     
 
