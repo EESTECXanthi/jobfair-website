@@ -1,15 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="/"/>
-    <meta name="description" content="What is JobFair? Διημερίδα επαγγελματικού προσανατολισμού. Απευθύνεται σε φοιτητές πολυτεχνικών σχολών. Αποτελεί τον συνδετικό κρίκο μεταξύ φοιτητών και εταιρειών">
-    <title>JobFair Xanthi</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>JobFair Xanthi 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <!-- Navbar (sticky) -->
+    <header class="navbar">
+        <button class="logo nav-links" onclick="location.href='#carousel'">
+            <img src="assets/logos/jf_logo_white.png" alt="JobFair Logo">
+        </button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="nav-links roboto-slab" id="navLinks">
+            <ul>
+                <li><a href="#carousel">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#offer">Offers</a></li>
+                <!-- <li><a href="#jobs">Jobs</a></li> -->
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Carousel Section -->
+    <section id="carousel" class="carousel">
+        <div class="carousel-container">
+            <div class="slide fade">
+                <img src="assets/images/carousel/8OM_5921-Darker.png" alt="Company Presentation">
+            </div>
+            <div class="slide fade">
+                <img src="assets/images/carousel/8OM_6402-Darker.png" alt="Students Networking">
+            </div>
+            <div class="slide fade">
+                <img src="assets/images/carousel/DSC_0159-Darker.png" alt="Job Interviews">
+            </div>
+            <div class="slide fade">
+                <img src="assets/images/carousel/DSC_0765-Darker.png" alt="Job Interviews">
+            </div>
+            <div class="slide fade">
+                <img src="assets/images/carousel/DSC_0859-Darker.png" alt="Job Interviews">
+            </div>
+            <div class="roboto-slab carousel-center-text">
+                <h1>JobFair Xanthi 2025</h1>
+                <p>Organised by EESTEC LC Xanthi & DECE DUTh</p>
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+
+    <!-- About (parallax) -->
+    <section id="about" class="about-parallax">
+        <div class="content-wrapper">
+            <div class="parallax-text roboto-slab">
+                <h2>About JobFair Xanthi</h2>
+                <p>
+                    Το JobFair Xanthi είναι μια διημερίδα επαγγελματικού προσανατολισμού για φοιτητές πολυτεχνικών σχολών,
+                    με στόχο να γεφυρώσει το χάσμα μεταξύ των φοιτητών της Ανατολικής Μακεδονίας και Θράκης και της
+                    αγοράς
+                    εργασίας. Προσφέρει στους φοιτητές την ευκαιρία να γνωρίσουν τον επιχειρηματικό κόσμο, να κάνουν
+                    επαγγελματικές γνωριμίες, να ανακαλύψουν ευκαιρίες και να προετοιμαστούν για την επαγγελματική τους
+                    σταδιοδρομία.
+                </p>
+            </div>
+            <div class="parallax-image">
+                <!-- Replace with your JobFair logo image -->
+                <img src="assets\logos\White JF Logo.svg" alt="JobFair Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- What does JobFair offer? -->
+    <section id="offer" class="offer">
+        <div class="content-wrapper">
+            <!-- Left Text Block -->
+            <div class="text-block-container scale_67">
+                <div class="text-block">
+                    <img class="union" src="assets/images/union.svg" alt="Background Shape">
+                        <img class="image-3" src="assets\logos\Original JF Logo.svg" alt="Decorative Image">
+                        <div class="line-4"></div>
+                        <div class="job-fair roboto-slab">Τι προσφέρει το JobFair;</div>
+                    <div class="div-span">
+                            <span>
+                                <span class="roboto-slab jf_color">
+                        Μέσα στην εκδήλωση θα έχετε την ευκαιρία να γνωρίσετε
+                                </span>
+                                <span class="roboto-slab jf_color">τομείς της επιχειρηματικότητας και της εργασίας ενός Ηλεκτρολόγου Μηχανικού και Μηχανικού Υπολογιστών.</span>
+                            </span>
+                        </div>
+                </div>
+            </div>
+        
+
+            <!-- Right SVG Shape with Cards -->
+            <div class="union-container scale_67">
+                <img class="union-shape" src="assets/images/union-red.svg" alt="Background Shape">
+                <div class="offer-grid roboto-slab">
+                    <!-- Cards -->
+                    <div class="card card1">
+                        <img src="assets/images/cards/Startup Day.png" alt="Startup Day">
+                        <div class="card-info">
+                            <span class="card-title">Startup Day</span>
+                            <button class="expand-btn" onclick="toggleCardDetails(this)">+</button>
+                        </div>
+                        <div class="card-details">
+                            <p>Εχεις μία καινοτόμα ιδέα αλλά δεν ξέρεις από που να αρχίσεις; Το Startup Day είναι η ευκαιρία να κάνεις βουτιά στον
+                            κόσμο της επιχειρηματικότητας! Είτε ψάχνεις για έμπνευση, είτε καθοδήγηση ή πιθανές συνεργασίες, το Startup Day είναι το
+                            μέρος να ξεκινήσεις το ταξίδι της καινοτομίας.</p>
+                        </div>
+                    </div>
+                    <div class="card card2">
+                        <img src="assets/images/cards/CV Seminar.png" alt="CV Seminar">
+                        <div class="card-info">
+                            <span class="card-title">CV Seminar</span>
+                            <button class="expand-btn" onclick="toggleCardDetails(this)">+</button>
+                        </div>
+                        <div class="card-details">
+                            <p>Το βιογραφικό είναι η πρώτη εντύπωση που θα έχει για σένα ο recruiter! Μάθε να φτιάχνεις το βιογραφικό σου, ώστε να
+                            ξεχωρίζεις! Θα καθοδηγηθείς στις καλύτερες πρακτικές και στο πως να αποφεύγεις συχνά λάθη.</p>
+                        </div>
+                    </div>
+                    <div class="card card3">
+                        <img src="assets/images/cards/Academic speeches - Workshops.png" alt="Academic Speeches">
+                        <div class="card-info">
+                            <span class="card-title">Workshops</span>
+                            <button class="expand-btn" onclick="toggleCardDetails(this)">+</button>
+                        </div>
+                        <div class="card-details">
+                            <p>Ενίσχυσε τις γνώσεις και τις δεξιότητές σου μέσω διαδραστικών workshops υπό καθοδήγηση των επαγγελματιών της
+                            βιομηχανίας! Καλύπτοντας μία μεγάλη γκάμα θεμάτων, αυτά τα workshops είναι σχεδιασμένα να σε εφοδιάσουν με πρακτικά
+                            εργαλεία και να σε βοηθήσουν να εξελιχθείς ακαδημαϊκά και επαγγελματικά.</p>
+                        </div>
+                    </div>
+                    <div class="card card4">
+                        <img src="assets/images/cards/Interviews.png" alt="Interviews">
+                        <div class="card-info">
+                            <span class="card-title">Interviews</span>
+                            <button class="expand-btn" onclick="toggleCardDetails(this)">+</button>
+                        </div>
+                        <div class="card-details">
+                            <p>Κάνε το επόμενο βήμα στην καριέρα σου με συνεντεύξεις από τις εταιρείες-χορηγούς μας! Είναι η ευκαιρία σου να δείξεις
+                            τις ικανότητες σου, να αποκτήσεις εμπειρία στην διαδικασία των συνεντεύξεων και πιθανόν να αποκτήσεις και μία δουλειά ή
+                            πρακτική. Μην χάσεις την δυνατότητα να αποκτήσεις αληθινές προοπτικές καριέρας!</p>
+                        </div>
+                    </div>
+                    <div class="card card5">
+                        <img src="assets/images/cards/Networking.png" alt="Networking">
+                        <div class="card-info">
+                            <span class="card-title">Networking</span>
+                            <button class="expand-btn" onclick="toggleCardDetails(this)">+</button>
+                        </div>
+                        <div class="card-details">
+                            <p>Δικτυώσου με εκπροσώπους από σημαντικές εταιρείες! Αυτή είναι η ευκαιρία σου να πάρεις απαντήσεις σε ερωτήματα σου και
+                            να κάνεις γνωριμίες που θα σε οδηγήσουν σε μελλοντικές ευκαιρίες καριέρας. Είτε διερευνάς επιλογές είτε ψάχνεις για
+                            δουλειά, αυτή η δικτύωση είναι σημαντική για την επιτυχία!.</p>
+                        </div>
+                    </div>
+                    <div class="card card6">
+                        <img src="assets/images/cards/Presentation.png" alt="Presentations">
+                        <div class="card-info">
+                            <span class="card-title">Presentations</span>
+                            <button class="expand-btn" onclick="toggleCardDetails(this)">+</button>
+                        </div>
+                        <div class="card-details">
+                            <p>Ρίξε μία ματιά στο εσωτερικό κορυφαίων εταιρειών και στις ευκαιρίες που μπορούν να σου προσφέρουν μέσω παρουσιάσεων!
+                            Μάθε απευθείας από επαγγελματίες για το τι κάνει την κάθε εταιρεία μοναδική και το πως μπορείς να γίνεις μέρος της
+                            ομάδας τους.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Offers Section (horizontal scroll) -->
+    <!-- <section id="jobs" class="job-offers">
+        <h2>Job Offers</h2>
+        <div class="job-scroll">
+            
+            <div class="job-card">
+                <h3>Company A</h3>
+                <h4>Software Engineer</h4>
+                <p>Requirements: C++, Teamwork, Problem-Solving</p>
+                <img src="company-a-logo.png" alt="Company A">
+                <button class="expand-btn" onclick="toggleJobOfferDetails(this)">+</button>
+                <div class="job-details">
+                    <p>More info about the role, responsibilities, and how to apply.</p>
+                </div>
+            </div>
+            <div class="job-card">
+                <h3>Company B</h3>
+                <h4>Marketing Analyst</h4>
+                <p>Requirements: Excel, Communication, Market Research</p>
+                <img src="company-b-logo.png" alt="Company B">
+                <button class="expand-btn" onclick="toggleJobOfferDetails(this)">+</button>
+                <div class="job-details">
+                    <p>Deep dive into the marketing campaigns and data-driven strategy.</p>
+                </div>
+            </div>
+            <div class="job-card">
+                <h3>Company C</h3>
+                <h4>Data Scientist</h4>
+                <p>Requirements: Python, Machine Learning, Statistics</p>
+                <img src="company-c-logo.png" alt="Company C">
+                <button class="expand-btn" onclick="toggleJobOfferDetails(this)">+</button>
+                <div class="job-details">
+                    <p>Analyze large datasets, build predictive models, and optimize workflows.</p>
+                </div>
+            </div>
+        
+        </div>
+    </section> -->
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors-section roboto-slab">
+        <h2>Our Sponsors</h2>
+    
+        <!-- Platinum -->
+        <div class="sponsor-category platinum roboto-slab">
+            <h3>Platinum Sponsors</h3>
+            <div class="content-wrapper-sponsors">
+                <div class="sponsor-logos">
+                    <div class="sponsor-card" onclick="openSponsorModal(
+                                         'EY',                       /* Company Name */
+                                         'Η EY δημιουργεί έναν καλύτερο εργασιακό κόσμο, παράγοντας νέα αξία για τους πελάτες, τους ανθρώπους, την κοινωνία και τον πλανήτη, οικοδομώντας, παράλληλα, εμπιστοσύνη στις κεφαλαιαγορές. Αξιοποιώντας τα δεδομένα, την τεχνητή νοημοσύνη και προηγμένες τεχνολογίες, οι ομάδες της EY βοηθούν τους πελάτες να διαμορφώσουν το μέλλον με αυτοπεποίθηση και να βρουν απαντήσεις για τις πιο σημαντικές προκλήσεις του σήμερα και του αύριο. Με ενεργή παρουσία σχεδόν 100 ετών στην ελληνική αγορά, η EY λειτουργεί σήμερα γραφεία σε Αθήνα, Θεσσαλονίκη και Πάτρα, προσφέροντας ευρύ φάσμα υπηρεσιών στους πελάτες της.', /* Description */
+                                         'assets/logos/company logos/Plat Sponsors/EY/EY_Logo_Beam_Tag_Horizontal_White_EN_U_RGB.png', /* Logo Path */
+                                         'https://www.ey.com/el_gr'
+                                    )">
+                        <img src="assets/logos/company logos/Plat Sponsors/EY/EY_Logo_Beam_Tag_Horizontal_White_EN_U_RGB.png"
+                            alt="Platinum Sponsor 1" width="275" height="137.5" />
+                    </div>
+                    
+                    <div class="sponsor-card" onclick="openSponsorModal(
+                                         'Netcompany',
+                                         'Η Netcompany-Intrasoft είναι ένας κορυφαίος Ευρωπαϊκός Όμιλος Λύσεων και Υπηρεσιών Πληροφορικής με ισχυρή διεθνή παρουσία και τεχνογνωσία, προσφέροντας καινοτόμες λύσεις προστιθέμενης αξίας υψηλής ποιότητας σε ένα ευρύ φάσμα διεθνών και εθνικών δημόσιων και ιδιωτικών οργανισμών. Η Netcompany-Intrasoft ιδρύθηκε το 1996 από την Intracom Holdings και παρέμεινε μέλος της μέχρι τον Οκτώβριο του 2021. Από τον Νοέμβριο του 2021, η INTRASOFT έγινε μέλος του Ομίλου Netcompany, μιας εταιρείας πληροφορικής με έδρα στη Δανία που ιδρύθηκε το 2000. Η Netcompany είναι η ταχύτερα αναπτυσσόμενη και πιο επιτυχημένη εταιρεία παροχής υπηρεσιών πληροφορικής στις Σκανδιναβικές χώρες, με τεράστια τεχνολογική εμπειρία και βαθιά γνώση που αφορά τον κλάδο, δημιουργώντας καινοτόμες λύσεις προσαρμοσμένες στην επίτευξη των επιχειρηματικών στόχων. Η Netcompany-Intrasoft απασχολεί περισσότερους από 3.200 επαγγελματίες υψηλής ειδίκευσης, που αντιπροσωπεύουν περισσότερες από 50 διαφορετικές εθνικότητες και κατέχουν περισσότερες από 30 γλώσσες. Με έδρα το Λουξεμβούργο, η Netcompany-Intrasoft λειτουργεί μέσω των λειτουργικών υποκαταστημάτων, θυγατρικών και γραφείων της σε 10 χώρες: Βέλγιο, Κύπρο, Ελλάδα, Ιορδανία, Λουξεμβούργο, Ρουμανία, RSA, Σκανδιναβία, ΗΑΕ και ΗΠΑ. ',
+                                         'assets/logos/company logos/Plat Sponsors/NETCOMPANY/Netcompany- White Logo.svg',
+                                         'https://netcompany.com/'
+                                    )">
+                        <img src="assets/logos/company logos/Plat Sponsors/NETCOMPANY/Netcompany- White Logo.svg" alt="Platinum Sponsor 2"
+                            width="400" height="74.5" />
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    
+        <!-- Gold -->
+        <div class="sponsor-category gold roboto-slab">
+            <h3>Gold Sponsors</h3>
+                <div class="content-wrapper-sponsors">
+                    <div class="sponsor-logos">
+                    <div class="sponsor-logos-carousel">
+                        <div class="sponsor-logos-track">
+                            <!-- Moving track for logos -->
+                            <div class="sponsor-card" onclick="openSponsorModal(
+                                                                     'KEBE',
+                                                                     'KEBE is a leading Greek ceramic building materials producer with two production units, including one of the world’s largest. Exporting to over 45 countries, KEBE recently expanded with a new factory in Serbia. The company pioneers energy-efficient products using robotic technology and strict quality control. Committed to sustainability, KEBE continuously grows to enhance living standards while protecting the environment.',
+                                                                     'assets/logos/company logos/Gold Sponsors/KEBE_logo_secondary_en.png',
+                                                                     'https://www.kebe-sa.gr/'
+                                                                )">
+                                <img src="assets\logos\company logos\Gold Sponsors\KEBE_logo_secondary_en.png" alt="Gold Sponsor 1" width="246" height="130">
+                            </div>
+
+                            <div class="sponsor-card" onclick="openSponsorModal(
+                                                                        'Thrace Group',
+                                                                        'Από το 1977 μέχρι και σήμερα, ο Όμιλος Πλαστικά Θράκης δραστηριοποιείται στην παραγωγή και διάθεση προϊόντων πολυπροπυλενίου και πολυαιθυλενίου κατασκευάζοντας Τεχνικά Υφάσματα & Λύσεις Συσκευασίας που διατίθενται στην παγκόσμια αγορά. Με αφετηρία το Μαγικό Ξάνθης, εξελίχθηκε σε έναν επιτυχημένο Ελληνικό Πολυεθνικό Όμιλο που απασχολεί περισσότερους από 2,000 εργαζόμενους και λειτουργεί παραγωγικές & εμπορικές μονάδες σε 9 χώρες (Ελλάδα, Σκωτία, Βουλγαρία, Ρουμανία, Ιρλανδία, Η.Π.Α., Σερβία, Νορβηγία και Σουηδία) και εκτεταμένο δίκτυο πωλήσεων σε περισσότερες από 80 χώρες. ',
+                                                                        'assets/logos/company logos/Gold Sponsors/thrace_logo_white.svg',
+                                                                        'https://www.thracegroup.com/'
+                                                            )">
+                                <img src="assets\logos\company logos\Gold Sponsors\thrace_logo_white.svg" alt="Gold Sponsor 2" width="459" height="132">
+                            </div>
+                        
+                            <div class="sponsor-card" onclick="openSponsorModal(
+                                                                        'ZEPHIROS',
+                                                                        'Η ZEPHIROS δραστηριοποιείται στον κλάδο των Ανανεώσιμων Πηγών Ενέργειας, παρέχοντας ολοκληρωμένες λύσεις σε όλο τον κύκλο ζωής των ενεργειακών έργων. Από την ανάπτυξη και κατασκευή, μέχρι τη λειτουργία, διαχείριση και ανακατασκευή, επενδύουμε στη βιωσιμότητα, την καινοτομία και τους ανθρώπους μας, διαμορφώνοντας το ενεργειακό μέλλον με αξιοπιστία και τεχνογνωσία.',
+                                                                        'assets/logos/company logos/Gold Sponsors/Zephiros_Logokit_Digital_Horizontal_negative.png',
+                                                                        'https://zephiros.gr/'
+                                                            )">
+                                <img src="assets\logos\company logos\Gold Sponsors\Zephiros_Logokit_Digital_Horizontal_negative.png" alt="Gold Sponsor 3" width="428" height="70">
+                            </div>
+                    
+                        </div>
+                    </div>
+
+                    <!-- Add more logos here -->
+                    </div>
+                </div>
+        </div>
+        <!-- Silver -->
+        <!-- <div class="sponsor-category silver roboto-slab">
+            <h3>Silver Sponsors</h3>
+            <div class="content-wrapper-sponsors">
+                <div class="sponsor-logos">
+                    <img src="assets/logos/silver1_transparent.png" alt="Silver Sponsor 1">
+                </div>
+            </div>
+        </div> -->
+    
+        <!-- Bronze -->
+        <!-- <div class="sponsor-category bronze roboto-slab">
+            <h3>Bronze Sponsors</h3>
+            <div class="content-wrapper-sponsors">
+                <div class="sponsor-logos">
+                    <img src="assets\logos\company logos\Bronze Sponsors\ena-logo-color-rgb (1).png" alt="Bronze Sponsor 1">
+                </div>
+            </div>
+        </div> -->
+    
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact">
+        <!-- Move Reach Us & red-line outside the .inverted-radius / .content-wrapper -->
+        
+       
+
+        <div class="content-wrapper-svg scale_80">
+            <h2 class="contact-heading roboto-slab">Reach Us</h2>
+            <div class="inverted-radius">
+                
+                <div class="red-line-right"></div>
+                <!-- Increased margin-top to push contents further down -->
+                <div class="contact-container single-box roboto-slab" style="margin-top: 5rem;">
+                    <div class="contact-box">
+                        <h3>EESTEC LC Xanthi</h3>
+                        <p>
+                            <a href="https://www.facebook.com/eesteclcxanthi" target="_blank">
+                                <img src="assets/icons/social-media.png" alt="Facebook"> EESTEC Xanthi
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/eestec_lc_xanthi/" target="_blank">
+                                <img src="assets/icons/instagram.png" alt="Instagram"> eestec_lc_xanthi
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.linkedin.com/company/eesteclcxanthi/" target="_blank">
+                                <img src="assets/icons/linkedin.png" alt="LinkedIn"> EESTEC LC Xanthi
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-box">
+                        <h3>JobFair Xanthi</h3>
+                        <p>
+                            <a href="https://www.facebook.com/jobfairlcxanthi" target="_blank">
+                                <img src="assets/icons/social-media.png" alt="Facebook"> JobFair Xanthi
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/jobfair_xanthi/" target="_blank">
+                                <img src="assets/icons/instagram.png" alt="Instagram"> jobfair_xanthi
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.linkedin.com/company/eestec-lc-xanthi" target="_blank">
+                                <img src="assets/icons/linkedin.png" alt="LinkedIn"> EESTEC LC Xanthi
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-box">
+                        <h3>DECE DUTh</h3>
+                        <p>
+                            <a href="https://www.facebook.com/dece.duth" target="_blank">
+                                <img src="assets/icons/social-media.png" alt="Facebook"> dece.duth
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.ee.duth.gr/" target="_blank">
+                                <img src="assets\icons\world-wide-web.png" alt="Website"> ee.duth.gr
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.linkedin.com/school/duth-/posts/?feedView=all" target="_blank">
+                                <img src="assets/icons/linkedin.png" alt="LinkedIn"> D.U.Th.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared modal structure -->
+    <div class="modal-overlay roboto-slab" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-text" id="modalText"></div>
+            <div class="modal-img" id="modalImg"></div>
+            <button class="modal-close" onclick="closeModal()">X</button>
+        </div>
+    </div>
+
+    <div class="sponsor-modal-overlay roboto-slab" id="sponsorModalOverlay" onclick="closeSponsorModal(event)">
+        <div class="sponsor-modal-content" onclick="event.stopPropagation()">
+            <div class="sponsor-modal-text" id="sponsorModalText"></div>
+            <div class="sponsor-modal-img" id="sponsorModalImg"></div>
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">X</button>
+        </div>
+    </div>
+
+    <div class="footer-separator"></div>
+    <footer class="navigation-footer roboto-slab">
+        <div class="footer-content">
+            <div class="branding-text">JobFair Xanthi 2025</div>
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>Sections</h3>
+                    <ul>
+                        <li><a href="#carousel">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#offer">Job Offers</a></li>
+                        <li><a href="#sponsors">Sponsors</a></li>
+                        <li><a href="#contact">Reach us</a></li>
+                        <li><a href="#contact">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Επικοινωνία</h3>
+                    <div class="contact-info">
+                        <div>
+                            <strong>ΤΗΜΜΥ ΔΠΘ:</strong><br>
+                            Τ: +30 693 805 6212<br>
+                            lbampis@ee.duth.gr
+                        </div>
+                        <div>
+                            <strong>EESTEC LC Xanthi:</strong><br>
+                            T: +30 698 980 3947<br>
+                            T: +30 695 539 0301<br>
+                            jobfairxanthi@eestecxanthis.gr
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-logos">
+                <img src="assets\logos\LC_Xanthi White.svg" alt="LC Xanthi Logo">
+                <img src="assets\logos\White JF Logo.svg" alt="JobFair Logo">
+                <img src="assets\logos\Asset 1.svg" alt="DUTh Logo">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+ 
+        // Reuse the same modal overlay and close logic
+        function openSponsorModal(companyName, description, logoPath, website) {
+                const modalOverlay = document.getElementById('sponsorModalOverlay');
+                const modalText = document.getElementById('sponsorModalText');
+                const modalImg = document.getElementById('sponsorModalImg');
+
+                // Fill modal content
+                modalText.innerHTML = `
+        <h2>${companyName}</h2>
+        <p>${description}</p>
+        <div style="margin-top: auto;">
+            <a href="${website}" target="_blank" style="color: white;">Visit Website</a>
+        </div>
+    `;
+                modalImg.innerHTML = `<img src="${logoPath}" alt="${companyName}" />`;
+
+                // Show modal
+                modalOverlay.style.display = 'flex';
+            }
+
+            function closeSponsorModal(event) {
+                const modalOverlay = document.getElementById('sponsorModalOverlay');
+                const modalText = document.getElementById('sponsorModalText');
+                
+                // Hide modal
+                modalOverlay.style.display = 'none';
+
+                // Reset scroll position
+                // Option 1: If there's only one paragraph
+                const paragraph = modalText.querySelector('p');
+                if (paragraph) paragraph.scrollTop = 0;
+
+                // Option 2: Reset the entire text container
+                modalText.scrollTop = 0;
+            }
+    </script>
+</body>
+
 </html>
