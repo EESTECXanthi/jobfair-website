@@ -63,9 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const modalText = document.getElementById("modalText");
     const modalImg = document.getElementById("modalImg");
 
-    function toggleCardDetails(button) {
-        const card = button.closest(".card");
-        if (!card) return;
+    function toggleCardDetails(card) {
+        const cardDetails = card.querySelector(".card-details");
+
+        if (!cardDetails) return;
 
         const titleEl = card.querySelector(".card-title");
         const detailsEl = card.querySelector(".card-details p");
@@ -94,6 +95,57 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     window.closeModal = closeModal; // ensure global availability
+
+    /* modal for job offers */
+
+    function openJobModal(company, title, requirements, description, logoPath, pdfLink, siteLink) {
+        const modal = document.getElementById("jobModal");
+        document.getElementById("jobModalLogo").src = logoPath;
+        document.getElementById("jobModalLogo").alt = company;
+        document.getElementById("jobModalTitle").textContent = title;
+
+        // Populate requirements as a list
+        const requirementsList = document.getElementById("jobModalReq");
+        requirementsList.innerHTML = ""; // Clear previous content
+        requirements.split("/-").forEach(req => {
+            const li = document.createElement("li");
+            li.textContent = req.trim();
+            requirementsList.appendChild(li);
+        });
+
+        document.getElementById("jobModalDesc").textContent = description;
+
+        const pdfElement = document.getElementById("jobModalPdf");
+        if (pdfLink) {
+            pdfElement.href = pdfLink;
+            pdfElement.style.display = "inline-block";
+        } else {
+            pdfElement.style.display = "none";
+        }
+
+        const siteElement = document.getElementById("jobModalSite");
+        siteElement.href = siteLink;
+
+        modal.style.display = "flex";
+    }
+
+    function closeJobModal() {
+        document.getElementById("jobModal").style.display = "none";
+    }
+
+    window.openJobModal = openJobModal;
+    window.closeJobModal = closeJobModal;
+
+    // Add an outside click event for the job modal
+    const jobModal = document.getElementById("jobModal");
+    if (jobModal) {
+        jobModal.addEventListener("click", (event) => {
+            // If the click is on the overlay (not on the modal content), close the modal
+            if (event.target === jobModal) {
+                closeJobModal();
+            }
+        });
+    }
 
     /* ----------------- Inertia Drag Scrolling ----------------- */
     const jobScroll = document.querySelector(".job-scroll");

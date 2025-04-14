@@ -1,1289 +1,1547 @@
 /* Reset margins & paddings */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #76202E;
-    /* Entire background color */
-    color: #fff;
-    /* Default text color to white */
-    font-family: Arial, sans-serif;
-    /* Remove default body margin/padding above */
-    scroll-behavior: smooth; /* Smooth scroll for the entire page */
+  margin: 0;
+  padding: 0;
+  background-color: #76202e;
+  /* Entire background color */
+  color: #fff;
+  /* Default text color to white */
+  font-family: Arial, sans-serif;
+  /* Remove default body margin/padding above */
+  scroll-behavior: smooth; /* Smooth scroll for the entire page */
+  overflow-x: hidden;
 }
 
-.scale_80{
-    transform: scale(0.8);
+.scale_80 {
+  transform: scale(0.8);
 }
 
 /* Sticky navbar */
 
 .navbar,
 .carousel {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: transparent; /* initial */
-    display: flex;
-    justify-content: space-between; /* for desktop */
-    align-items: center;
-    padding: 1rem 2rem;
-    z-index: 9999;
-    transition: background 0.2s ease;
-    /* If you want a box-shadow once scrolled, add it in the JS snippet above. */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent; /* initial */
+  display: flex;
+  justify-content: space-between; /* for desktop */
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 9999;
+  transition: background 0.2s ease;
+  /* If you want a box-shadow once scrolled, add it in the JS snippet above. */
 }
 
-.logo{
-    font-weight: bold;
-        font-size: 1.2rem;
-        color: #000;
-        background: none;
-        /* Ensure the button itself has no background */
-        border: none;
-        cursor: pointer;
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
+  background: none;
+  /* Ensure the button itself has no background */
+  border: none;
+  cursor: pointer;
 }
-.navbar{
-    font-weight: bold;
-    font-size: 1.2rem;
-    color:#000;
+.navbar {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #000;
 }
 
 .navbar .logo img {
-    max-height: 50px;
-    /* Adjust logo size */
-    object-fit: contain;
-    background: none;
+  max-height: 50px;
+  /* Adjust logo size */
+  object-fit: contain;
+  background: none;
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    /* For bigger text globally: */
-    font-size: 1.1rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  /* For bigger text globally: */
+  font-size: 1.1rem;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: #fff;
-    /* White text for contrast */
-    font-weight: 500;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  /* White text for contrast */
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: rbga(69, 49, 79, 0.2);
-    /* Highlight color on hover */
+  color: rbga(69, 49, 79, 0.2);
+  /* Highlight color on hover */
 }
 
 /* Centered container for most of the page */
 .content-wrapper {
-    position: relative;
-    max-width: 1200px; 
-    margin: 0 auto;    /* centers everything horizontally */
-    padding: 0;   /* optional horizontal padding */
-    display: flex;     /* side-by-side layout for parallax-text & parallax-image */
-    align-items: center;
-    justify-content: space-between; /* or space-around, etc. */
-    min-height: 550px;
-    overflow: visible;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto; /* centers everything horizontally */
+  padding: 0; /* optional horizontal padding */
+  display: flex; /* side-by-side layout for parallax-text & parallax-image */
+  align-items: center;
+  justify-content: space-between; /* or space-around, etc. */
+  min-height: 550px;
+  overflow: visible;
 }
 
-.content-wrapper-sponsors{
-    width: 1200px;
+.content-wrapper-sponsors {
+  width: 1200px;
 }
 
 .content-wrapper-svg {
-    position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 350px;
-        overflow: visible;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 350px;
+  overflow: visible;
 }
 
 @media screen and (max-width: 768px) {
-    .content-wrapper-svg {
-        display: block;
-        min-height: 0; /* Allow auto-height on mobile */
-        max-width: 100% !important; /* Adjust width for mobile */
-        height: fit-content;
-    }
+  .content-wrapper-svg {
+    display: block;
+    min-height: 0; /* Allow auto-height on mobile */
+    max-width: 100% !important; /* Adjust width for mobile */
+    height: fit-content;
+  }
 
-    .scale_75{
-        transform: scale(1) !important;
-    }
+  .scale_75 {
+    transform: scale(1) !important;
+  }
 
-    .contact-heading {
-        font-size: 1.5rem !important; /* Adjust font size for mobile */
-        position: absolute;
-        top: 5px !important;
-        transform: translateX(-85%);
-        text-align: center; /* Ensure text is centered */
-    }
-    
+  .contact-heading {
+    font-size: 1.5rem !important; /* Adjust font size for mobile */
+    position: absolute;
+    top: 5px !important;
+    transform: translateX(-85%);
+    text-align: center; /* Ensure text is centered */
+  }
 }
 
 .jf_color {
-    color: #76202e !important;
+  color: #76202e !important;
 }
 
 /* Carousel */
 .carousel {
-    margin-top: 0; /* Remove top gap if needed */
-    position: relative;
-    width: 100%;
-    max-height: 70vh;
-    overflow: hidden;
+  margin-top: 0; /* Remove top gap if needed */
+  position: relative;
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
 }
 
 .carousel-container {
-    position: relative;
-    justify-content: space-between;
-    overflow: hidden;
-    width: 100%;
-    height: 70vh;
-    /* Adjust height as needed */
+  position: relative;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+  height: 70vh;
+  /* Adjust height as needed */
 }
 
 .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .slide.active {
-    opacity: 1;
-    z-index: 1;
+  opacity: 1;
+  z-index: 1;
 }
 
 .prev,
 .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    background: transparent; /* no background by default */
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    z-index: 2;
-    border-radius: 50%; /* make it circular on hover */
-    width: 40px; /* ensure it's a circle */
-    height: 40px; /* ensure it's a circle */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease; /* smooth transition */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background: transparent; /* no background by default */
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  z-index: 2;
+  border-radius: 50%; /* make it circular on hover */
+  width: 40px; /* ensure it's a circle */
+  height: 40px; /* ensure it's a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease; /* smooth transition */
 }
 
 .prev:hover,
 .next:hover {
-    background: rgba(0, 0, 0, 0.7); /* darker circle on hover */
+  background: rgba(0, 0, 0, 0.7); /* darker circle on hover */
 }
 
 .prev {
-    left: 10px;
+  left: 10px;
 }
 
 .next {
-    right: 10px;
+  right: 10px;
 }
 
 .roboto-slab {
-    font-family: "Roboto Slab", serif;
-    font-weight: 400;
-    /* Normal weight */
-    /* Adjust size as needed */
-    color: #fff;
-    /* Ensure good contrast */
-    /* Center-align the text */
-    z-index: 100;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  /* Normal weight */
+  /* Adjust size as needed */
+  color: #fff;
+  /* Ensure good contrast */
+  /* Center-align the text */
+  z-index: 100;
 }
 
 .carousel-center-text {
-    position: absolute; /* Position it relative to the carousel container */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for the element's size */
-    text-align: center;
-    z-index: 2; /* Ensure it appears above the images */
-    pointer-events: none; /* Prevent it from blocking clicks */
+  position: absolute; /* Position it relative to the carousel container */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the element's size */
+  text-align: center;
+  z-index: 2; /* Ensure it appears above the images */
+  pointer-events: none; /* Prevent it from blocking clicks */
 }
 
 .carousel-center-text h1 {
-    font-size: 4.5rem; /* Adjust as needed */
-    color: #fff;
-    margin: 0;
+  font-size: 4.5rem; /* Adjust as needed */
+  color: #fff;
+  margin: 0;
 }
 
 .carousel-center-text p {
-    font-size: 1.75rem; /* Adjust as needed */
-    color: #fff;
-    margin: 0.5rem 0 0;
+  font-size: 1.75rem; /* Adjust as needed */
+  color: #fff;
+  margin: 0.5rem 0 0;
 }
 
 button.prev,
 button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3; /* Ensure buttons are above everything */
-    background-color: rgba(0, 0, 0, 0); /* Optional: semi-transparent background */
-    color: #fff;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3; /* Ensure buttons are above everything */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Optional: semi-transparent background */
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 button.prev {
-    left: 10px;
+  left: 10px;
 }
 
 button.next {
-    right: 10px;
+  right: 10px;
 }
 
 button.prev:hover,
 button.next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
 }
 
 /* About (parallax) */
 .about-parallax {
-    width: 100%;
-    background: #591823; /* or any color/image you want */
-    background-size: cover; /* if you have an image */
-    background-attachment: fixed; /* optional parallax-like effect */
-    padding: 2rem 0; /* vertical spacing around content */
+  width: 100%;
+  background: #591823; /* or any color/image you want */
+  background-size: cover; /* if you have an image */
+  background-attachment: fixed; /* optional parallax-like effect */
+  padding: 2rem 0; /* vertical spacing around content */
 }
 
 .about-parallax .parallax-text {
-    color: #fff;
+  color: #fff;
 }
 
-.about-parallax .parallax-text  {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    text-align: justify;
+.about-parallax .parallax-text {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .about-parallax .parallax-text *:hover {
-    background: none !important;
-    outline: none !important;
+  background: none !important;
+  outline: none !important;
 }
 
 .parallax-text,
 .parallax-image {
-    width: 50%;
-    padding: 1rem;
-    box-sizing: border-box;
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .parallax-text h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .parallax-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
-    /* About Section - mobile */
-        .about-parallax {
-            padding: 1rem;
-            background-attachment: scroll;
-            /* Disable parallax if desired */
-        }
-    
-        .content-wrapper {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-            min-height: auto;
-            /* Allow auto-height on mobile */
-            margin-top: 7rem;
-            /* Push content below fixed navbar if needed */
-        }
-    
-        .parallax-text,
-        .parallax-image {
-            width: 100%;
-            padding: 0.5rem;
-        }
-    
-        .parallax-text h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-    
-        .parallax-text p {
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-    
-        .parallax-image {
-            display: flex;
-            /* New line */
-            justify-content: center;
-            /* New line */
-            align-items: center;
-            /* New line */
-        }
+  /* About Section - mobile */
+  .about-parallax {
+    padding: 1rem;
+    background-attachment: scroll;
+    /* Disable parallax if desired */
+  }
 
-        .parallax-image img {
-            max-width: 150px;
-            margin-bottom: 1rem;
-        }
-    
-        /* Other section tweaks for mobile as needed */
-        .text-block-container {
-            position: static;
-            width: 100% !important;
-            margin: 1rem 1rem;
-        }
-    
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    min-height: auto;
+    /* Allow auto-height on mobile */
+    margin-top: 7rem;
+    /* Push content below fixed navbar if needed */
+  }
+
+  .parallax-text,
+  .parallax-image {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .parallax-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .parallax-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .parallax-image {
+    display: flex;
+    /* New line */
+    justify-content: center;
+    /* New line */
+    align-items: center;
+    /* New line */
+  }
+
+  .parallax-image img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+  }
+
+  /* Other section tweaks for mobile as needed */
+  .text-block-container {
+    position: static;
+    width: 100% !important;
+    margin: 1rem 1rem;
+  }
 }
 
 /* Offers */
 .offer {
-    position: relative;
-    background-color: #76202E; /* Background color for the section */
-    padding: 4rem 0; /* Add vertical padding */
-    overflow: hidden; /* Ensure no overflow from absolute elements */
+  position: relative;
+  background-color: #76202e; /* Background color for the section */
+  padding: 4rem 0; /* Add vertical padding */
+  overflow: hidden; /* Ensure no overflow from absolute elements */
 }
 
 @media screen and (max-width: 768px) {
-    .offer {
-        padding-bottom: 0 !important; /* Adjust padding for mobile */
-    }
-    
+  .offer {
+    padding-bottom: 0 !important; /* Adjust padding for mobile */
+  }
 }
 
 .offer h2 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Container for the red-background shape */
 .offer-grid-shape-bg {
-    position: relative;
-    /* The red SVG now used as a background image instead of an <img> tag: */
-    background: url("assets/images/union-red.svg") no-repeat center;
-    background-size: contain; 
-    /* Add some padding to ensure the shape is visible around the cards: */
-    padding: 4rem 2rem;
-    margin: 0 auto; /* if you want to center it horizontally */
+  position: relative;
+  /* The red SVG now used as a background image instead of an <img> tag: */
+  background: url("assets/images/union-red.svg") no-repeat center;
+  background-size: contain;
+  /* Add some padding to ensure the shape is visible around the cards: */
+  padding: 4rem 2rem;
+  margin: 0 auto; /* if you want to center it horizontally */
 }
-
-
 
 /* Make the top-left box a corner shape with a diagonal and rounded corners. Adjust the polygon points as desired. */
 .big-box {
-    grid-area: 1 / 1 / 3 / 3;
-    background: #fff;
-    color: #000;
-    /* Clip to a diagonal corner with rounded edges */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 50%, 50% 100%, 0% 100%);
-    border-radius: 15px; /* Add rounded corners */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    overflow: hidden; /* Ensure content respects rounded corners */
+  grid-area: 1 / 1 / 3 / 3;
+  background: #fff;
+  color: #000;
+  /* Clip to a diagonal corner with rounded edges */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 50%, 50% 100%, 0% 100%);
+  border-radius: 15px; /* Add rounded corners */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  overflow: hidden; /* Ensure content respects rounded corners */
 }
 
 .big-box .text-box {
-    grid-column: 1 / 3;  /* top row, spanning 2 columns */
-    background: none;    /* remove extra gray box if desired */
-    padding: 0;          /* or adjust as needed */
+  grid-column: 1 / 3; /* top row, spanning 2 columns */
+  background: none; /* remove extra gray box if desired */
+  padding: 0; /* or adjust as needed */
 }
 
 .big-box .logo-box {
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .big-box .logo-box img {
-    max-width: 150px;
+  max-width: 150px;
 }
 
-.big-box .logo-box{
-    width: 100px;
-    height: 10px;
-    background: red;
-    margin-top: 1rem;
-    border-radius: 3px;
+.big-box .logo-box {
+  width: 100px;
+  height: 10px;
+  background: red;
+  margin-top: 1rem;
+  border-radius: 3px;
 }
 
 .card1 {
-    grid-area: 1 / 3;
+  grid-area: 1 / 3;
 }
 
 .card2 {
-    grid-area: 2 / 3;
+  grid-area: 2 / 3;
 }
 
 .card3 {
-    grid-area: 3 / 1;
+  grid-area: 3 / 1;
 }
 
 .card4 {
-    grid-area: 3 / 2;
+  grid-area: 3 / 2;
 }
 
 .card5 {
-    grid-area: 3 / 3;
+  grid-area: 3 / 3;
 }
 
 .card6 {
-    grid-area: 2 / 2;
+  grid-area: 2 / 2;
 }
 
 /* Cards with no padding around the image, shorter, closer text/button, bigger '+' button */
 .card {
-    position: relative;
-        /* Ensure the button is positioned relative to the card */
-        width: 300px;
-        height: 250px;
-        background-color: #45314F;
-        border-radius: 40px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        z-index: 10;
+  position: relative;
+  /* Ensure the button is positioned relative to the card */
+  width: 300px;
+  height: 250px;
+  background-color: #45314f;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 10;
 }
 
 .sponsor-card {
-    display: inline-block;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .sponsor-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .card img {
-    width: 100%;
-    height: 175px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
-    border: none;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  border: none;
 }
 
 /* Put title and button on the same line */
 .card-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
 }
 
 /* Increase font size to 25px */
 .card-title {
-    margin-top: 17px;
-    margin-left: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
+  margin-top: 17px;
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
 }
-
 
 /* Hide card details so only the card title is visible in the card itself */
 .card-details {
-    display: none; /* The text will now only appear in the modal */
-}
-
-body.modal-open {
-    overflow: hidden !important;
-    height: 100vh !important;
+  display: none; /* The text will now only appear in the modal */
 }
 
 /* Basic modal overlay (hidden by default) */
 .modal-overlay {
-    display: none; /* shown with JS when a card’s button is clicked */
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
+  display: none; /* shown with JS when a card’s button is clicked */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Modal Content with Max Size */
 .modal-content {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    transform: translate(0%, 0%);
-    display: flex;
-    align-items: stretch;
-    /* Align content vertically */
-    justify-content: space-between;
-    width: 800px;
-    /* Fixed width */
-    height: 530px;
-    /* Fixed height */
-    background: #45314F;
-    /* Dark background color */
-    border-radius: 40px;
-    /* Rounded corners */
-    padding: 0;
-    /* Remove padding to align content properly */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    /* Subtle shadow */
-    color: #fff;
-    /* White text for contrast */
-    overflow: hidden;
-    /* Ensure content stays inside the modal */
-    position: relative;
-    /* For positioning the close button */
-    transition: opacity 0.3s ease-in-out;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  transform: translate(0%, 0%);
+  display: flex;
+  align-items: stretch;
+  /* Align content vertically */
+  justify-content: space-between;
+  width: 800px;
+  /* Fixed width */
+  height: 530px;
+  /* Fixed height */
+  background: #45314f;
+  /* Dark background color */
+  border-radius: 40px;
+  /* Rounded corners */
+  padding: 0;
+  /* Remove padding to align content properly */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+  color: #fff;
+  /* White text for contrast */
+  overflow: hidden;
+  /* Ensure content stays inside the modal */
+  position: relative;
+  /* For positioning the close button */
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Text on the left */
 .modal-text {
-    flex: 0 0 60%;
-    /* Take up 60% of the modal width */
-    padding: 2rem;
-    /* Add padding for spacing */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* Align text to the top */
-    gap: 1rem;
-    /* Space between title and description */
+  flex: 0 0 60%;
+  /* Take up 60% of the modal width */
+  padding: 2rem;
+  /* Add padding for spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Align text to the top */
+  gap: 1rem;
+  /* Space between title and description */
 }
 
 .modal-text h2 {
-    font-size: 3rem;
-    /* Adjust font size */
-    font-weight: bold;
-    
-    margin: 0;
-    margin-bottom: 2rem;
+  font-size: 3rem;
+  /* Adjust font size */
+  font-weight: bold;
+
+  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .modal-text p {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* Image on the right, no extra padding */
 .modal-img {
-    flex: 0 0 40%;
-    /* Take up 40% of the modal width */
-    height: 100%;
-    /* Extend to the full height of the modal */
-    overflow: hidden;
-    /* Ensure the image stays inside */
-    position: relative;
-    /* For positioning the close button */
+  flex: 0 0 40%;
+  /* Take up 40% of the modal width */
+  height: 100%;
+  /* Extend to the full height of the modal */
+  overflow: hidden;
+  /* Ensure the image stays inside */
+  position: relative;
+  /* For positioning the close button */
 }
 
 /* Ensure image fills its container without side padding */
 .modal-img img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensure the image fills the space without distortion */
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensure the image fills the space without distortion */
 }
 
 /* Round white circle for the close button */
 .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: #fff;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: #76202E;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-align: center;
-    z-index: 10;
-    /* Ensure it appears above the image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #76202e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  z-index: 10;
+  /* Ensure it appears above the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-close:hover {
-    color: #a6283e;
-    background: #f5f5f5;
-    /* Slight hover effect */
+  color: #a6283e;
+  background: #f5f5f5;
+  /* Slight hover effect */
 }
 
 .sponsor-modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 /* Sponsor Modal Content */
 .sponsor-modal-content {
-    display: flex;
-        align-items: stretch;
-        /* Align content vertically */
-        justify-content: space-between;
-        width: 800px;
-        /* Fixed width */
-        height: 530px;
-        /* Fixed height */
-        background: #45314F;
-        /* Dark background color */
-        border-radius: 40px;
-        /* Rounded corners */
-        padding: 0; 
-        /* Remove padding to align content properly */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        /* Subtle shadow */
-        color: #fff;
-        /* White text for contrast */
-        overflow: hidden;
-        /* Ensure content stays inside the modal */
-        position: relative;
-        /* For positioning the close button */
+  display: flex;
+  align-items: stretch;
+  /* Align content vertically */
+  justify-content: space-between;
+  width: 800px;
+  /* Fixed width */
+  height: 530px;
+  /* Fixed height */
+  background: #45314f;
+  /* Dark background color */
+  border-radius: 40px;
+  /* Rounded corners */
+  padding: 0;
+  /* Remove padding to align content properly */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+  color: #fff;
+  /* White text for contrast */
+  overflow: hidden;
+  /* Ensure content stays inside the modal */
+  position: relative;
+  /* For positioning the close button */
 }
 
 /* Sponsor Modal Text */
 .sponsor-modal-text {
-    flex: 0 0 60%;
-        /* Take up 60% of the modal width */
-        padding: 2rem;
-        /* Add padding for spacing */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        /* Align text to the top */
-        gap: 1rem;
-        height: 100%;
-        text-align: justify;
-        /* Space between title and description */
+  flex: 0 0 60%;
+  /* Take up 60% of the modal width */
+  padding: 2rem;
+  /* Add padding for spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Align text to the top */
+  gap: 1rem;
+  height: 100%;
+  text-align: justify;
+  /* Space between title and description */
 }
 
 .sponsor-modal-text h2 {
-font-size: 3rem;
-    /* Adjust font size */
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 2rem;
+  font-size: 3rem;
+  /* Adjust font size */
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .sponsor-modal-text p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-    padding-right: 1rem;
-    overflow-y: auto;
-    /* Prevent text overflow */
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-right: 1rem;
+  overflow-y: auto;
+  /* Prevent text overflow */
 }
 
 /* Sponsor Modal Image */
 .sponsor-modal-img {
-    flex: 0 0 40%;
-        /* Take up 40% of the modal width */
-        height: auto;
-        /* Extend to the full height of the modal */
-        justify-content: center;
-        display: flex;
-            /* Center horizontally */
-        align-items: center;
-        overflow: hidden;
-        /* Ensure the image stays inside */
-        position: relative;
-        padding-right: 2rem;
+  flex: 0 0 40%;
+  /* Take up 40% of the modal width */
+  height: auto;
+  /* Extend to the full height of the modal */
+  justify-content: center;
+  display: flex;
+  /* Center horizontally */
+  align-items: center;
+  overflow: hidden;
+  /* Ensure the image stays inside */
+  position: relative;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.sponsor-modal-img.light {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 1) 45%,
+    rgba(255, 255, 255, 1) 55%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+.sponsor-modal-img.dark {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 1) 45%,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
 }
 
 .sponsor-modal-img img {
-    max-width: 100%;
-        /* Ensure the image fits within the container's width */
-        height: auto;
-        /* Maintain aspect ratio */
-        display: block;
+  max-width: 100%;
+  /* Ensure the image fits within the container's width */
+  height: auto;
+  /* Maintain aspect ratio */
+  display: block;
 }
 
 /* Sponsor Modal Close Button */
 .sponsor-modal-close {
-    position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: #fff;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        color: #76202E;
-        font-size: 1.2rem;
-        cursor: pointer;
-        text-align: center;
-        z-index: 10;
-        /* Ensure it appears above the image */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #76202e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  z-index: 10;
+  /* Ensure it appears above the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sponsor-modal-close:hover {
-    color: #a6283e;
-    background: #f5f5f5;
-    /* Slight hover effect */
+  color: #a6283e;
+  background: #f5f5f5;
+  /* Slight hover effect */
 }
 
 /* Job Offers (horizontal scroll) */
 .job-offers {
-    padding: 3rem 2rem;
+  padding: 3rem 2rem;
 }
 
 .job-offers h2 {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .job-offers h2 {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+  }
+  .job-offers {
+    padding: 1rem 2rem;
+  }
 }
 
 .job-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 0 1rem;
+  display: flex;
+  overflow-x: auto;
+  max-width: 100%;
+  gap: 2rem;
+  padding: 0 1rem;
 }
 
 /* Job Offers Section */
 .job-offers {
-    padding: 3rem 2rem;
+  padding: 3rem 2rem;
 }
 
 /* Horizontal scroll container: hidden scrollbar, draggable scrolling */
 .job-scroll {
-    display: flex;
-    gap: 2rem;
-    overflow-x: scroll;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-    /* Optional for smoother trackpad/phone scrolling */
-    -webkit-overflow-scrolling: touch;
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  /* Optional for smoother trackpad/phone scrolling */
+  -webkit-overflow-scrolling: touch;
 }
 .job-scroll::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari */
+  display: none; /* Hide scrollbar for Chrome, Safari */
 }
 
 /* Make job cards narrower and double the height */
 .job-card {
-    min-width: 160px; /* narrower width */
-    height: 400px; /* doubled the height if originally ~200px */
-    flex: 0 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1rem;
-    position: relative;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 300px; /* narrower width */
+  height: 450px; /* doubled the height if originally ~200px */
+  flex: 0 0 auto;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Alternate background colors using nth-child */
 .job-card:nth-child(odd) {
-    background: #591823;
-    color: #fff;
+  background: #591823;
+  color: #fff;
 }
 .job-card:nth-child(even) {
-    background: #FFF1F3;
-    color: #76202E;
+  background: #fff1f3;
+  color: #76202e;
+}
+
+.job-card:nth-child(odd) .expand-btn {
+  background: #fff;
+  color: #591823;
+}
+
+.job-card:nth-child(even) .expand-btn {
+  background: #591823;
+  color: #fff;
 }
 
 /* Expand button (reuse existing styles or adjust as needed) */
 .job-card .expand-btn {
-    position: absolute
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.job-card .job-text {
+  position: absolute;
+  top: 30px;
+  left: 25px;
+}
+
+/* Adjust heights and spacing for each text element */
+.job-text h3 {
+  height: 15px;
+  line-height: 15px;
+  margin: 0;
+}
+.job-text h4 {
+  height: 30px;
+  line-height: 18px;
+  margin: 20px 0 0 0; /* 20px from previous */
+}
+.job-text p {
+  height: 20px;
+  line-height: 20px;
+  margin: 3px 0 0 0; /* 20px from previous */
+}
+
+.job-card img {
+  position: absolute;
+  top: 275px; /* 250px down from the top of the card */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  max-width: 80%; /* Restrict the width to 60% of the card */
+  max-height: 25%; /* Restrict the height to 25% of the card */
+  object-fit: contain; /* Ensure the image scales properly */
+}
+
+.job-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal content styling */
+.job-modal-content {
+  position: relative;
+  width: 800px;
+  min-height: 600px;
+  height: 600px;
+  background: #76202e;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-modal-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.job-modal-header h2 {
+  flex: 0 0 40%;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #fff;
+}
+
+.job-modal-logo {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left image or logo area */
+.job-modal-logo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.job-modal-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Right text area */
+.job-modal-text {
+  display: flex;
+  flex-direction: row; /* Arrange content in a row */
+  justify-content: space-between; /* Space between the two sections */
+  align-items: flex-start; /* Align items to the top */
+  gap: 1rem; /* Add spacing between the two sections */
+  width: 100%;
+  height: auto;
+}
+
+.job-modal-text p {
+  max-height: 220px; /* Set a maximum height for the description */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+  padding-right: 1rem; /* Add padding for better readability */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+#jobModalDesc {
+  margin-top: 20px;
+}
+
+.job-modal-text .job-details {
+  flex: 0 0 70%; /* Take up 70% of the width */
+}
+
+.job-modal-text .job-buttons {
+  flex: 0 0 30%; /* Take up 30% of the width */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: flex-end; /* Align buttons to the bottom */
+  align-items: flex-end; /* Align buttons to the right */
+  gap: 1rem; /* Add spacing between buttons */
+  padding-right: 1rem; /* Add some space from the right edge */
+  padding-bottom: 1rem; /* Add some space from the bottom edge */
+}
+
+.job-modal-text .job-buttons a {
+  width: fit-content; /* Ensure buttons fit their content */
+  padding: 0.5rem 1rem; /* Add padding for better appearance */
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Close button */
+.job-modal-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: #fff;
+  color: #591823;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn.white-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #76202e;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.white-btn:hover {
+  background-color: #591823;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn.white-btn:active {
+  transform: scale(0.95);
+}
+
+.job-requirements {
+  list-style-type: disc;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: #fff;
+}
+
+.job-requirements li {
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
 }
 
 /* Smooth grabbing cursor styling */
 .job-scroll {
-    cursor: grab;
+  cursor: grab;
 }
 .job-scroll.grabbing {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 /* Contact Section */
 .contact-heading {
-    position: absolute;
-    top: -10px;
-    /* Adjust to ensure visibility */
-    left: 135px;
-    /* Adjust to ensure visibility */
-    z-index: 1;
-    /* Ensure it's above all other elements */
-    font-size: 10rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: visible;
+  position: absolute;
+  top: -10px;
+  /* Adjust to ensure visibility */
+  left: 135px;
+  /* Adjust to ensure visibility */
+  z-index: 1;
+  /* Ensure it's above all other elements */
+  font-size: 10rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: visible;
 }
-
 
 /* Contact Boxes */
 
-
 .contact-box {
-    background: hsl(0, 0%, 100%);
-    color: #76202E;
-    border-radius: 10px;
-    padding: 0rem;
-    min-width: 220px;
-    max-width: 300px;
-    position: relative;
-    left: 5%;
-    top: -2%;
+  background: hsl(0, 0%, 100%);
+  color: #76202e;
+  border-radius: 10px;
+  padding: 0rem;
+  min-width: 220px;
+  max-width: 300px;
+  position: relative;
+  left: 5%;
+  top: -2%;
 }
 
 /* Example heading style inside contact boxes */
 .contact-box h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
+    #offer .content-wrapper {
+      margin-bottom: -5rem;
+    }
+    #jobs .content-wrapper {
+      margin-top: 1.5rem; /* Apply negative margin only to this content-wrapper */
+    }
+  }
 }
 
 /* Job Offers Section */
 .job-offers {
-    padding: 3rem 2rem;
+  padding: 3rem 2rem;
+  padding-top: 0rem;
 }
 
 /* Horizontal scroll container: hidden scrollbar, draggable scrolling */
 .job-scroll {
-    display: flex;
-    gap: 2rem;
-    overflow-x: scroll;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-    /* Optional for smoother trackpad/phone scrolling */
-    -webkit-overflow-scrolling: touch;
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  /* Optional for smoother trackpad/phone scrolling */
+  -webkit-overflow-scrolling: touch;
 }
 .job-scroll::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari */
-}
-
-/* Make job cards narrower and double the height */
-.job-card {
-    min-width: 160px; /* narrower width */
-    height: 400px; /* doubled the height if originally ~200px */
-    flex: 0 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1rem;
-    position: relative;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: none; /* Hide scrollbar for Chrome, Safari */
 }
 
 /* Alternate background colors using nth-child */
 
-
 /* Contact Section */
 .contact {
-    background: #76202E; /* Match the body background color */
-    color: #ffffff;
-    text-align: center;
-    padding: 3rem 2rem;
-    overflow: visible;
+  background: #76202e; /* Match the body background color */
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 2rem;
+  overflow: visible;
 }
 
 @media screen and (max-width: 768px) {
-    .contact {
-        padding: 0rem 0rem !important;
-    }
-    
+  .contact {
+    padding: 0rem 0rem !important;
+  }
 }
 
-
-
 .contact-box {
-    background: #fff;
-    color: #76202E;
-    border-radius: 15px;
-    padding: 1rem;
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px;
-    text-align: left;
+  background: #fff;
+  color: #76202e;
+  border-radius: 15px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: left;
 }
 
 .contact-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact-box p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .contact-box a {
-    color: #76202E;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+  color: #76202e;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .contact-box a img {
-    width: 24px;
-    height: 24px;
-    margin-right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
 }
 
 /* Add extra margin-top to move contact boxes lower */
 
 /* Sponsor section styling */
 .sponsors {
-    width: 100%;
-    /* Full-width background */
-    background-color: #76202E;
-    color: #fff;
-    padding: 0;
-    /* Vertical/horizontal spacing */
-    text-align: center;
+  width: 100%;
+  /* Full-width background */
+  background-color: #76202e;
+  color: #fff;
+  padding: 0;
+  /* Vertical/horizontal spacing */
+  text-align: center;
 }
 
 .sponsor-category {
-    margin-bottom: 4rem;
-    /* Add spacing between tiers */
+  margin-bottom: 4rem;
+  /* Add spacing between tiers */
 }
 
 .sponsor-category.platinum h3 {
-    padding-top: 0px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 1rem;
+  padding-top: 0px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 1rem;
 }
 
 .sponsor-category.gold h3 {
-    padding-top: 25px;
-    font-size: 1.33rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 0rem;
+  padding-top: 25px;
+  font-size: 1.33rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0rem;
 }
 
 .sponsor-category.silver h3 {
-    padding-top: 00px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 1.33rem;
+  padding-top: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0rem;
 }
 
 .sponsor-category.bronze h3 {
-    padding-top: 00px;
-    font-size: 0.66rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 0.9rem;
+  padding-top: 00px;
+  font-size: 0.66rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.2rem;
 }
 
 .sponsor-logos {
-    width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    max-height: 200px;
-    gap: 2rem;
-    /* Add spacing between logos */
-    justify-content: center;
-    /* Center the logos */
-    align-items: center;
-    flex-wrap: nowrap;
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 200px;
+  gap: 2rem;
+  /* Add spacing between logos */
+  justify-content: center;
+  /* Center the logos */
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sponsor-category.platinum .sponsor-logos {
+    flex-direction: column; /* Change layout to column */
+    align-items: center; /* Center the logos */
+    gap: 0.2rem; /* Adjust spacing between logos */
+    width: 100%; /* Ensure it fits within the container */
+  }
+  .sponsor-card[onclick*="Netcompany"] {
+    width: 420px;
+    height: 85px;
+    margin-top: 50px;
+  }
+
+  .sponsor-category.platinum h3 {
+    margin-top: -20px;
+    padding-bottom: 20px;
+  }
 }
 
 .sponsor-category.gold .sponsor-logos {
-    justify-content: space-evenly;
-    gap: 2rem;
+  justify-content: space-evenly;
+  gap: 2rem;
 }
 
 .sponsor-logos-carousel {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0 auto;
   position: relative;
 }
 
-.sponsor-card img[alt="Gold Sponsor 1"] {
-    margin-left: 50px;
-}
-
 .sponsor-logos-track {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: transform 0.3s ease;
-    justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+  justify-content: space-evenly;
 }
-
 
 .sponsors h2 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .sponsor-category {
-    margin-top: 5%;
-    margin-bottom: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* ensures any absolute items stay contained */
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* ensures any absolute items stay contained */
+}
+
+.sponsor-category .whitener {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* ensures it sits above the sponsor-category background */
 }
 
 .sponsor-category.platinum {
-    height: 330px;
-    background-color: rgba(217, 217, 217, 0.05);
+  height: 330px;
+  background-color: rgba(217, 217, 217, 0.2);
 }
 
 .sponsor-category.gold {
-    height: 220px;
-    background-color: rgba(239, 191, 4, 0.05);
+  height: 220px;
+  background-color: rgba(239, 191, 4, 0.2);
 }
 
 .sponsor-category.silver {
-    height: 165px;
-    background-color: rgba(196, 196, 196, 0.05);
+  height: 165px;
+  background-color: rgba(196, 196, 196, 0.2);
 }
 
 .sponsor-category.bronze {
-    height: 110px;
-    background-color: rgba(206, 137, 70, 0.05);
+  height: 110px;
+  background-color: rgba(206, 137, 70, 0.2);
 }
-
 
 /* General styling for sponsor logos */
 
-
 /* Platinum category logos */
 .sponsor-category.platinum .sponsor-logos img {
-    max-width: 400px; /* Larger size for Platinum sponsors */
-    max-height: 300px; /* Ensure logos don't exceed this height */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain;
-    border-radius: 5px;
-    padding: 0.5rem;
+  max-width: 400px; /* Larger size for Platinum sponsors */
+  max-height: 300px; /* Ensure logos don't exceed this height */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 /* Gold category logos */
 .sponsor-category.gold .sponsor-logos img {
-    /* max-width: 300px; */
-    max-height: 200px; /* Ensure logos don't exceed this height */
-    object-fit: contain;
-    border-radius: 5px;
-    padding: 0.5rem;
+  /* max-width: 300px; */
+  max-height: 200px; /* Ensure logos don't exceed this height */
+  object-fit: contain;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 /* Silver category logos */
 .sponsor-category.silver .sponsor-logos img {
-    max-width: 250px;
-    max-height: 150px; /* Ensure logos don't exceed this height */
-    object-fit: contain;
-    border-radius: 5px;
-    padding: 0.5rem;
+  max-width: 300px;
+  max-height: 150px; /* Ensure logos don't exceed this height */
+  object-fit: contain;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 /* Bronze category logos */
 .sponsor-category.bronze .sponsor-logos img {
-    max-width: 200px;
-    max-height: 100px; /* Ensure logos don't exceed this height */
-    object-fit: contain;
-    border-radius: 5px;
-    padding: 0.5rem;
+  max-width: 200px;
+  max-height: 100px; /* Ensure logos don't exceed this height */
+  object-fit: contain;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 /* Footer */
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem 0;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
 }
 
 footer ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 0.5rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
 footer a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Center the line-spacer in the footer */
 .line-spacer {
-    width: 1000px;
-    height: 10px;
-    background: #fff;
-    margin: 1rem auto; /* center horizontally */
-    border-radius: 3px;
+  width: 1000px;
+  height: 10px;
+  background: #fff;
+  margin: 1rem auto; /* center horizontally */
+  border-radius: 3px;
 }
 
 .inverted-radius {
-    --r: 40px;
-    /* the radius */
-    --s: 40px;
-    /* size of inner curve */
-    --x: 400px;
-    /* horizontal offset */
-    --y: 20px;
-    /* vertical offset */
+  --r: 40px;
+  /* the radius */
+  --s: 40px;
+  /* size of inner curve */
+  --x: 400px;
+  /* horizontal offset */
+  --y: 20px;
+  /* vertical offset */
+  overflow: visible;
+  width: 1200px;
+  /* or another width to fit your layout */
+  aspect-ratio: 3;
+  background: #fff;
+  border-radius: var(--r);
+  position: relative;
+
+  --_m: /calc(2 * var(--r)) calc(2 * var(--r)) radial-gradient(#000 70%, #0000
+        72%);
+  --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
+  --_d: (var(--s) + var(--r));
+
+  mask: calc(var(--_d) + var(--x)) 0 var(--_m),
+    0 calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px))
+      calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(var(--_d) + var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+
+  mask-repeat: no-repeat;
+  margin: 0 auto;
+  /* center horizontally if desired */
+}
+
+@media screen and (max-width: 768px) {
+  .inverted-radius {
+    --r: 20px; /* the radius */
+    --s: 20px; /* size of inner curve */
+    --x: 120px; /* horizontal offset */
+    --y: 10px; /* vertical offset */
     overflow: visible;
-    width: 1200px;
-    /* or another width to fit your layout */
-    aspect-ratio: 3;
+    width: 100%;
+    aspect-ratio: 0.4;
     background: #fff;
     border-radius: var(--r);
     position: relative;
 
-    --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+    margin: 0 auto; /* Add vertical spacing and center horizontally */
+    padding: 1rem; /* Add internal spacing if needed */
+    z-index: 1;
+
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+
+    --_m: /calc(2 * var(--r)) calc(2 * var(--r)) radial-gradient(#000 70%, #0000
+          72%);
     --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
     --_d: (var(--s) + var(--r));
 
-    mask:
-        calc(var(--_d) + var(--x)) 0 var(--_m),
-        0 calc(var(--_d) + var(--y)) var(--_m),
-        radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px)) calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
-        var(--_g) calc(var(--_d) + var(--x)) 0,
-        var(--_g) 0 calc(var(--_d) + var(--y));
+    mask: calc(var(--_d) + var(--x)) 0 var(--_m),
+      0 calc(var(--_d) + var(--y)) var(--_m),
+      radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px))
+        calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+      var(--_g) calc(var(--_d) + var(--x)) 0,
+      var(--_g) 0 calc(var(--_d) + var(--y));
 
     mask-repeat: no-repeat;
-    margin: 0 auto;
-    /* center horizontally if desired */
-}
-
-@media screen and (max-width: 768px) {
-    .inverted-radius {
-        --r: 20px; /* the radius */
-        --s: 20px; /* size of inner curve */
-        --x: 120px; /* horizontal offset */
-        --y: 10px; /* vertical offset */
-        overflow: visible;
-        width: 100%;
-        aspect-ratio: 0.4;
-        background: #fff;
-        border-radius: var(--r);
-        position: relative;
-
-        margin: 0 auto; /* Add vertical spacing and center horizontally */
-        padding: 1rem; /* Add internal spacing if needed */
-        z-index: 1;
-
-        display: flex; /* Use flexbox for centering */
-        justify-content: center; /* Center content horizontally */
-        align-items: center;
-
-        --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
-        --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
-        --_d: (var(--s) + var(--r));
-
-        mask:
-            calc(var(--_d) + var(--x)) 0 var(--_m),
-            0 calc(var(--_d) + var(--y)) var(--_m),
-            radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px)) calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
-            var(--_g) calc(var(--_d) + var(--x)) 0,
-            var(--_g) 0 calc(var(--_d) + var(--y));
-
-        mask-repeat: no-repeat;
-    }
-    
+  }
 }
 
 .inverted-radius-2 {
-    --r: 40px;
-    /* the radius */
-    --s: 40px;
-    /* size of inner curve */
-    --x: 83px;
-    /* horizontal offset */
-    --y: 0px;
-    /* vertical offset */
+  --r: 40px;
+  /* the radius */
+  --s: 40px;
+  /* size of inner curve */
+  --x: 83px;
+  /* horizontal offset */
+  --y: 0px;
+  /* vertical offset */
 
-    width: 1000px;
-    /* or another width */
-    aspect-ratio: 3;
-    background: #3FB8AF;
-    border-radius: var(--r);
-    margin: 0 auto;
-    /* center horizontally */
+  width: 1000px;
+  /* or another width */
+  aspect-ratio: 3;
+  background: #3fb8af;
+  border-radius: var(--r);
+  margin: 0 auto;
+  /* center horizontally */
 
-    /* Use inline SVG mask to create a stepped shape with 3 steps on bottom-left, 1 top-right corner */
-    -webkit-mask: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://wjw.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M0,100 L0,70 L20,70 L20,50 L40,50 L40,30 L60,30 L60,0 L100,0 L100,100Z' fill='black'/></svg>") no-repeat center / cover;
-    mask: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M0,100 L0,70 L20,70 L20,50 L40,50 L40,30 L60,30 L60,0 L100,0 L100,100Z' fill='black'/></svg>") no-repeat center / cover;
+  /* Use inline SVG mask to create a stepped shape with 3 steps on bottom-left, 1 top-right corner */
+  -webkit-mask: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://wjw.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M0,100 L0,70 L20,70 L20,50 L40,50 L40,30 L60,30 L60,0 L100,0 L100,100Z' fill='black'/></svg>")
+    no-repeat center / cover;
+  mask: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M0,100 L0,70 L20,70 L20,50 L40,50 L40,30 L60,30 L60,0 L100,0 L100,100Z' fill='black'/></svg>")
+    no-repeat center / cover;
 }
 
 /* Red line on the right side of the shape */
 
-
 .line-spacer {
-    width: 1000px;
-    height: 10px;
-    background: rgb(255, 255, 255);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 3px;
-    justify-content: center;
+  width: 1000px;
+  height: 10px;
+  background: rgb(255, 255, 255);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  justify-content: center;
 }
 
 /* Figma Text-Block Snippet */
@@ -1293,7 +1551,7 @@ footer a {
 }
 
 .text-block {
-pointer-events: none;
+  pointer-events: none;
   position: relative; /* container for the absolute elements */
   /* Make sure the container's height matches or exceeds union.svg */
   width: 760px;
@@ -1316,249 +1574,427 @@ pointer-events: none;
 }
 
 @media (max-width: 768px) {
+  .text-block-container {
+    top: -100px !important;
+    height: fit-content !important;
+    min-height: 0 !important;
+    position: relative !important;
+    display: block !important;
+  }
 
-    .text-block-container{
-        top: -100px !important;
-        height: fit-content !important;
-        min-height: 0 !important;
-        position: relative !important;
-        display: block !important;
-    }
+  .text-block {
+    width: 100% !important;
+    aspect-ratio: 2.34 !important;
+    min-height: 0 !important;
+  }
 
-    .text-block{
-        width: 100% !important;
-        aspect-ratio: 2.34 !important;
-        min-height: 0 !important;
-    }
+  .union-container {
+    width: 100% !important;
+    height: fit-content !important;
+    padding-bottom: 30px !important;
+  }
+  .union {
+    content: url("assets/images/union_mobile.svg");
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    position: static;
+  }
+  .image-3 {
+    display: none;
+  }
 
-    .union-container{
-        width: 100% !important;
-        height: fit-content !important;
-        padding-bottom: 30px !important;
-    }
-    .union {
-            content: url("assets/images/union_mobile.svg");
-            display: block;
-            margin: 0 auto;
-            width: 90%;
-            height: auto;
-            position: static;
-        }
-    .image-3 {
-            display: none;
-        }
-        
-    /* Hide the red line */
-    .line-4 {
-        display: none;
-    }
+  /* Hide the red line */
+  .line-4 {
+    display: none;
+  }
 
-    /* Ensure the text remains visible and properly aligned */
-    .job-fair {
-        font-size: calc(1.5vw + 1rem) !important;
-        position: static !important;
-        margin: -8rem auto 1rem auto !important;
-        text-align: center !important;
-        width: fit-content !important;
-        
+  /* Ensure the text remains visible and properly aligned */
+  .job-fair {
+    font-size: calc(1.5vw + 1rem) !important;
+    position: static !important;
+    margin: -8rem auto 1rem auto !important;
+    text-align: center !important;
+    width: fit-content !important;
+  }
 
-    }
+  .div-span {
+    font-size: calc(1vw + 0.5rem) !important;
+    position: static !important;
+    margin: -0.5rem auto 1rem auto !important;
+    text-align: justify !important;
+    width: 80% !important;
+    /* Centered block within its container */
+    display: block;
+  }
 
-    .div-span {
-        font-size: calc(1vw + 0.5rem) !important;
-        position: static !important;
-        margin: -0.5rem auto 1rem auto !important;
-        text-align: justify !important;
-        width: 80% !important;
-        /* Centered block within its container */
-        display: block;
-    }
+  .union-shape {
+    content: url("assets/images/union-red-mobile.svg");
+    position: relative;
+    margin: 0 auto !important;
+    width: 90% !important;
+    position: relative !important;
+    height: auto !important;
+    z-index: -1 !important;
+  }
 
-    .union-shape {
-        content: url("assets/images/union-red-mobile.svg");
-        position: relative;
-        margin: 0 auto !important;
-        width: 90% !important;
-        position: relative !important;
-        height: auto !important;
-        z-index: -1 !important;
-        
+  .offer-grid {
+    display: grid !important;
+    height: 90% !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, auto) !important;
+    row-gap: 0px !important;
+    column-gap: 0px !important;
+    transform: none !important;
+    z-index: 10 !important;
+    position: absolute !important;
+    top: 5% !important;
+    /* Remove any offsets for mobile */
+  }
 
-    }
+  .expand-btn {
+    transform: scale(0.6) translate(15px, 30px) !important;
+  }
 
-    .offer-grid {
-        display: grid !important;
-        height: 90% !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-template-rows: repeat(3, auto) !important;
-        row-gap: 0px !important;
-        column-gap: 0px !important;
-        transform: none !important;
-        z-index: 10 !important;
-        position: absolute !important;
-        top: 5% !important;
-        /* Remove any offsets for mobile */
-    }
+  .union-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto !important;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
 
-    .expand-btn {
-        transform: scale(0.6) translate(15px, 30px) !important;
-    }
+  .card-title {
+    font-size: calc(1vw + 0.5rem) !important;
+    margin-top: 0rem !important;
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
 
-    .union-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        margin: 0 auto !important;
-        width: 100%;
-        height: auto;
-        transform: none;
-    }
+  .card img {
+    width: 100% !important;
+    height: 75px !important;
+  }
 
-    .card-title{
-        font-size: calc(1vw + 0.5rem) !important;
-        margin-top: 0rem !important;
-        margin-left: 0 !important;
-        text-align: center !important;
-    }
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6 {
+    grid-area: auto !important;
+  }
 
-    .card img{
-        width: 100% !important;
-        height: 75px !important;
-    }
+  .offer-grid .card {
+    width: 80% !important;
+    max-height: 110px !important;
+    aspect-ratio: 1.5 !important;
+    border-radius: 25px !important;
+    /* Optional minimum width */
+    margin: 0 auto !important;
+    /* Center and add a bit of spacing */
+  }
 
-    .card1, .card2, .card3, .card4, .card5, .card6 {
-        grid-area: auto !important;
-    }
+  .modal-text h2 {
+    font-size: 1.5rem;
+    /* Adjust font size */
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 
+  .modal-text p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+  }
 
-    .offer-grid .card {
-        width: 80% !important;
-        max-height: 110px!important;
-        aspect-ratio: 1.5 !important;
-        border-radius: 25px !important;
-        /* Optional minimum width */
-        margin: 0 auto !important;
-        /* Center and add a bit of spacing */
-    }
+  .modal-img {
+    height: auto !important;
+  }
 
-        .modal-text h2 {
-            font-size: 1.5rem;
-            /* Adjust font size */
-            font-weight: bold;
-            margin: 0;
-            margin-bottom: 1rem;
-        }
-    
-        .modal-text p {
-            font-size: 0.8rem;
-            line-height: 1.5;
-            margin: 0;
-        }
+  .modal-overlay {
+    display: none;
+    max-width: 100% !important;
+    position: absolute;
+    height: 440% !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    width: 90% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
 
-        .modal-img {
-            height: auto !important;
-        }
+  .sponsor-modal-overlay {
+    display: none;
+    max-width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .modal-overlay{
-        display: none;
-        max-width: 100% !important;
-        position: absolute;
-        height: 400% !important;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.7);
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-content{
-        width: 90% !important;
-        height: auto !important;
-        margin: 0 !important;
-    }
+  .sponsor-category.platinum .sponsor-modal-overlay {
+    height: 735% !important;
+  }
 
-    .sponsor-modal-overlay{
-        display: none;
-        max-width: 100% !important;
-        position: absolute;
-        height: 550% !important;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.7);
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-    }
-    
+  .sponsor-category.gold .sponsor-modal-overlay {
+    height: 770% !important;
+  }
 
+  .sponsor-category.silver .sponsor-modal-overlay {
+    height: 810% !important;
+  }
 
-    .sponsor-modal-content {
-        width: 90% !important;
-        height: auto !important;
-        margin: 0 !important;
-    }
+  .sponsor-category.bronze .sponsor-modal-overlay {
+    height: 820% !important;
+  }
 
-    .sponsor-modal-text h2 {
-        font-size: 1.5rem;
-        /* Adjust font size */
-        font-weight: bold;
-        margin: 0;
-        margin-bottom: 1rem;
-    }
+  .sponsor-modal-content {
+    width: 90% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
 
-    .sponsor-modal-text p {
-        font-size: 0.7rem;
-        line-height: 1.5;
-        margin: 0;
-        max-height: 300px;
-        text-align: left;
-    }
+  .sponsor-modal-text h2 {
+    font-size: 1.5rem;
+    /* Adjust font size */
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 
-    .sponsor-modal-img {
-        height: auto !important;
-    }
+  .sponsor-modal-text p {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    margin: 0;
+    max-height: 300px;
+    text-align: left;
+  }
 
-    .content-wrapper-sponsors{
-        transform: scale(0.5) translate(0px, 0px) !important;
-    }
-    
-    
-    .sponsor-category.platinum {
-        height: 247.5px;
-    }
+  .sponsor-modal-img {
+    height: auto !important;
+  }
 
-    .sponsor-category.gold {
-        height: 165px;
-    }
+  .content-wrapper-sponsors {
+    transform: scale(0.5) translate(0px, 0px) !important;
+  }
 
-    .sponsor-category.silver {
-        height: 123.75px;
-    }
+  .sponsor-category.platinum {
+    height: 300px;
+  }
 
-    .sponsor-category.bronze {
-        height: 82.5px;
-    }
+  .sponsor-category.gold {
+    height: 165px;
+  }
 
-    .sponsor-category.platinum h3 {
-        font-size: 1.5rem;
-    }
+  .sponsor-category.silver {
+    height: 123.75px;
+  }
 
-    .sponsor-category.gold h3 {
-        font-size: 1.2rem;
-    }
+  .sponsor-category.bronze {
+    height: 82.5px;
+  }
 
-    .sponsor-category.silver h3 {
-        font-size: 1rem;
-    }
+  .sponsor-category.platinum h3 {
+    font-size: 1.5rem;
+  }
 
-    .sponsor-category.bronze h3 {
-        font-size: 0.8rem;
-    }
+  .sponsor-category.gold h3 {
+    font-size: 1.2rem;
+  }
+
+  .sponsor-category.silver h3 {
+    font-size: 1rem;
+  }
+
+  .sponsor-category.bronze h3 {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    margin-bottom: -15px;
+  }
+
+  /* job offer modal */
+  .job-card .expand-btn {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 2.2rem !important;
+  }
+
+  .job-modal-overlay {
+    max-width: 100% !important;
+    top: 0% !important;
+  }
+
+  .job-modal-content {
+    width: 90% !important;
+    height: 400px !important;
+    margin: 0 !important;
+  }
+  .job-modal-text h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .job-requirements {
+    padding-left: 0px !important;
+  }
+
+  #jobModalDesc {
+    margin-top: 5px !important;
+    font-size: 0.8rem !important;
+    max-height: 150px !important;
+    overflow-y: auto !important;
+  }
+
+  .job-modal-text li {
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .job-modal-text p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .job-modal-buttons a {
+    width: 80px;
+    font-size: 1rem;
+  }
+
+  .btn.btn.white-btn {
+    width: 80px;
+    font-size: 0.7rem;
+  }
+}
+
+.sponsor-card[onclick*="EY"] {
+  width: 360px;
+  height: 180px;
+  margin-top: -25px;
+}
+
+.sponsor-card[onclick*="Netcompany"] {
+  width: 420px;
+  height: 85px;
+}
+
+.sponsor-card[onclick*="Sunlight"] {
+  margin-top: 50px;
+  width: 400px;
+  height: 150px;
+}
+
+.sponsor-card[onclick*="KEBE"] {
+  width: 246px;
+  height: 130px;
+  margin-top: -10px;
+  margin-left: 40px;
+}
+
+.sponsor-card[onclick*="Thrace Group"] {
+  width: 459px;
+  height: 132px;
+}
+
+.sponsor-card[onclick*="ZEPHIROS"] {
+  width: 428px;
+  height: 70px;
+}
+
+.sponsor-card[onclick*="ΙΩΝΙΚΗ Engineering"] {
+  width: 300px;
+  height: 100px;
+}
+
+.sponsor-card[onclick*="PRISMA ELECTRONICS SA"] {
+  width: 300px;
+  height: 100px;
+}
+
+.sponsor-card[onclick*="Ansys"] {
+  width: 276px;
+  height: 112px;
+}
+
+.sponsor-card[onclick*="METLEN"] {
+  width: 300px;
+  height: 112px;
+}
+
+.sponsor-card[onclick*="Ena Team"] {
+  width: 100px;
+  height: 75px;
+}
+
+/* Ensure images take up 100% of the card's width and height */
+.sponsor-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+  /* Gold Sponsors */
+  .sponsor-card[onclick*="KEBE"] {
+    width: 246px;
+    height: 130px;
+  }
+
+  .sponsor-card[onclick*="Thrace Group"] {
+    width: 459px;
+    height: 132px;
+  }
+
+  .sponsor-card[onclick*="ZEPHIROS"] {
+    width: 428px;
+    height: 70px;
+  }
+
+  .sponsor-card[onclick*="ΙΩΝΙΚΗ Engineering"] {
+    width: 300px;
+    height: 100px;
+  }
+
+  .sponsor-card[onclick*="PRISMA ELECTRONICS SA"] {
+    width: 300px;
+    height: 100px;
+  }
+
+  .sponsor-card[onclick*="Ansys"] {
+    width: 276px;
+    height: 112px;
+  }
+
+  .sponsor-card[onclick*="METLEN"] {
+    width: 300px;
+    height: 112px;
+  }
+
+  .sponsor-card[onclick*="Ena Team"] {
+    width: 110px;
+    height: 82.5px;
+  }
 }
 
 .image-3 {
@@ -1620,10 +2056,10 @@ pointer-events: none;
 
 /* ...the .div-span, .div-span2, etc. style definitions follow... */
 .div-span {
-    position: absolute;
-    top: 22%;
-    left: 13%;
-    max-width: 600px;
+  position: absolute;
+  top: 22%;
+  left: 13%;
+  max-width: 600px;
   color: #76202e;
   font-family: "Roboto-Regular", sans-serif;
   font-size: 20px;
@@ -1645,7 +2081,7 @@ pointer-events: none;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  background-color: #76202E; /* Example footer background */
+  background-color: #76202e; /* Example footer background */
   color: #fff;
   padding: 2rem;
   box-sizing: border-box;
@@ -1662,7 +2098,8 @@ pointer-events: none;
 }
 
 /* Example: remove absolute positioning from .items, .items2, etc. */
-.items, .items2 {
+.items,
+.items2 {
   position: static;
   width: auto;
   height: auto;
@@ -1682,19 +2119,25 @@ pointer-events: none;
   display: flex;
   gap: 2rem;
 }
-.frame-2, .frame-1 {
+.frame-2,
+.frame-1 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.home, .about, .job-offers, .sponsors, .reach-us, .contact-us {
+.home,
+.about,
+.job-offers,
+.sponsors,
+.reach-us,
+.contact-us {
   font-size: 1rem;
   cursor: pointer; /* Indicate these are clickable */
 }
 
-.sponsors-section{
-    font-size: 1rem;
-    text-align: center;
+.sponsors-section {
+  font-size: 1rem;
+  text-align: center;
 }
 
 /* Contact info boxes */
@@ -1727,15 +2170,18 @@ pointer-events: none;
   height: auto;
   margin-bottom: 1rem;
 }
-.du-th-logo, .logo-job-fair, .lc-xanthi-white-1 {
+.du-th-logo,
+.logo-job-fair,
+.lc-xanthi-white-1 {
   max-width: 100px; /* control images size */
   height: auto;
   margin-bottom: 1rem;
 }
 
 /* Hide or remove these if unused */
-.aaa, .aaaaaaaaa {
-  display: none; 
+.aaa,
+.aaaaaaaaa {
+  display: none;
 }
 
 /* Responsive tweak if desired */
@@ -1746,188 +2192,186 @@ pointer-events: none;
   }
 }
 
-
 /* Footer styling */
 .navigation-footer {
-    background-color: #76202E; /* Match the body background color */
-    color: #fff;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  background-color: #76202e; /* Match the body background color */
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
 }
 
 .branding-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .footer-sections {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    width: 1200px; /* Max width for sections */
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  width: 1200px; /* Max width for sections */
 }
 
 .footer-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px; /* Max width for each section */
-    margin-bottom: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px; /* Max width for each section */
+  margin-bottom: 40px;
 }
 
 .footer-section h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .footer-section ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .contact-info {
-    display: flex;
-    justify-content: space-around; /* Space around for contact info */
-    gap: 2rem;
+  display: flex;
+  justify-content: space-around; /* Space around for contact info */
+  gap: 2rem;
 }
 
 .contact-info div {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .footer-logos {
-    display: flex;
-    justify-content: space-between; /* Space around for logos */
-    gap: 2rem;
-    margin-top: 1rem;
-    width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space around for logos */
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .footer-logos img {
-    max-width: 200px;
-    /* Default size for all logos */
-    height: auto;
+  max-width: 200px;
+  /* Default size for all logos */
+  height: auto;
 }
 
 @media screen and (max-width: 768px) {
-    .footer-logos img{
-        max-width: 100px !important;
-        /* Default size for all logos */
-    }
-    .footer-logos {
-        margin-top: -50px !important;
-        display: flex;
-        flex-wrap: wrap; /* Allow wrapping of logos */
-        justify-content: center; /* Center the logos horizontally */
-        gap: 3rem;
-    }
+  .footer-logos img {
+    max-width: 100px !important;
+    /* Default size for all logos */
+  }
+  .footer-logos {
+    margin-top: -50px !important;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of logos */
+    justify-content: center; /* Center the logos horizontally */
+    gap: 3rem;
+  }
 
-    .footer-logos img:nth-child(3) {
-        flex-basis: 100%; /* Force the last logo to take a full row */
-        text-align: center; /* Center the last logo */
-        max-width: 150px !important; /* Adjust size for mobile */
-    }
-    
+  .footer-logos img:nth-child(3) {
+    flex-basis: 100%; /* Force the last logo to take a full row */
+    text-align: center; /* Center the last logo */
+    max-width: 150px !important; /* Adjust size for mobile */
+  }
 }
 
 /* Specific styling for the DUTh logo */
 .footer-logos img[alt="DUTh Logo"] {
-    max-width: 200px;
-    /* Constrain the box size */
-    height: auto;
-    object-fit: contain;
-    /* Ensure the logo scales proportionally */
-    transform: scale(1.5);
-    /* Make the DUTh logo visually larger */
+  max-width: 200px;
+  /* Constrain the box size */
+  height: auto;
+  object-fit: contain;
+  /* Ensure the logo scales proportionally */
+  transform: scale(1.5);
+  /* Make the DUTh logo visually larger */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .footer-content {
-        align-items: center;
-    }
+  .footer-content {
+    align-items: center;
+  }
 
-    .footer-sections {
-        flex-direction: column;
-        align-items: center;
-    }
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-    }
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footer-separator {
-    width: 90%;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 8px;
-    margin: 2rem auto; /* spacing before the footer */
+  width: 90%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 2rem auto; /* spacing before the footer */
 }
 
 @media screen and (max-width: 768px) {
-    .footer-separator {
-        margin-top: 00px !important;
-    }
-    
+  .footer-separator {
+    margin-top: 00px !important;
+  }
 }
 
 /* Navigation links */
 .nav-links ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.1rem; /* bigger letters for desktop */
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.1rem; /* bigger letters for desktop */
+  margin: 0;
+  padding: 0;
 }
 
 /* Hide hamburger on desktop (optional) */
 .hamburger {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    .navbar {
+  .navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1937,281 +2381,275 @@ pointer-events: none;
     width: 100%; /* Ensure it takes full width */
     max-width: 100vw; /* Prevent overflow */
     background-color: rgba(196, 196, 196, 0.5);
-    }
-    
-    .logo {
-        display: flex !important;
-        align-items: center;
-        width: fit-content !important;
-        padding: 0 !important;
-        position: relative !important;
-        top: 0 !important;
-        background-color: transparent !important;
-    }
+  }
 
-    .hamburger {
-        display: flex; /* Ensures it stays inline */
-        align-items: center;
-        justify-content: center;
-        color: white;
-        cursor: pointer;
-        font-size: 1.5rem; /* Adjust size if needed */
-        padding: 0.5rem;
-    }
+  .logo {
+    display: flex !important;
+    align-items: center;
+    width: fit-content !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    background-color: transparent !important;
+  }
 
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 82px; /* just below header */
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem 0;
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .nav-links.active {
-        display: flex; /* Show when active */
-    }
-    
-    .nav-links ul {
-      flex-direction: column;
-      gap: 1rem;
-    }
+  .hamburger {
+    display: flex; /* Ensures it stays inline */
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem; /* Adjust size if needed */
+    padding: 0.5rem;
+  }
 
-    .nav-links ul li {
-      text-align: center;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 82px; /* just below header */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
-    .nav-links ul li a {
-      color: #fff;
-      font-size: 1.2rem;
-      display: block;
-      width: 100%;
-      padding: 0.5rem 0;
-    }
-    
+  .nav-links.active {
+    display: flex; /* Show when active */
+  }
 
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .logo img {
-        max-height: 40px;
-        /* Adjust size for mobile */
-        object-fit: contain;
-        /* Ensure the image scales properly */
-    }
+  .nav-links ul li {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links ul li a {
+    color: #fff;
+    font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .logo img {
+    max-height: 40px;
+    /* Adjust size for mobile */
+    object-fit: contain;
+    /* Ensure the image scales properly */
+  }
 }
 
 /* Text Block (Left) */
 .text-block-container {
-    position: absolute;
-    top: 0; /* Align with the top of the section */
-    width: 40%; /* Adjust width */
-    z-index: 2; /* Ensure it appears above the SVG */
+  position: absolute;
+  top: 0; /* Align with the top of the section */
+  width: 40%; /* Adjust width */
+  z-index: 2; /* Ensure it appears above the SVG */
 }
 
 .text-block h2 {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
 }
 
 .text-block p {
-    font-size: 1.2rem;
-    color: #fff;
-    line-height: 1.5;
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.5;
 }
 
 /* Union Shape with Cards (Right) */
 .union-container {
-    margin-top: 115px;
-    position: relative; /* Relative to the section */
-    width: 1200px; /* Full width of the section */
-    height: auto; /* Let the height adjust based on content */
-    display: flex;
-    justify-content: center; /* Center the SVG and cards */
-    align-items: center;
-    z-index: 1; /* Behind the cards */
+  margin-top: 115px;
+  position: relative; /* Relative to the section */
+  width: 1200px; /* Full width of the section */
+  height: auto; /* Let the height adjust based on content */
+  display: flex;
+  justify-content: center; /* Center the SVG and cards */
+  align-items: center;
+  z-index: 1; /* Behind the cards */
 
-    transform: translate(0px, -115px); /* Adjust position */
+  transform: translate(0px, -115px); /* Adjust position */
 }
 
 /* Red SVG Shape */
 .union-shape {
-    pointer-events: none;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 1200px; /* Explicit width */
-    height: 950px; /* Explicit height */
-    object-fit: contain; /* Maintain aspect ratio */
-    z-index: -1; /* Place it behind the cards */
+  pointer-events: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1200px; /* Explicit width */
+  height: 950px; /* Explicit height */
+  object-fit: contain; /* Maintain aspect ratio */
+  z-index: -1; /* Place it behind the cards */
 }
 
 /* Cards inside the SVG */
 .offer-grid {
-    position: relative;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 cards per row */
-        grid-template-rows: auto;
-        /* Automatically adjust row heights */
-        row-gap: 50px;
-        /* Vertica spacing between rows */
-        column-gap: 70px;
-        /* Horizontal spacing between columns */
-        width: 90%;
-        /* Center the grid within the container */
-        margin: 0;
-        /* Center the grid horizontally */
-        z-index: 10;
-        /* Ensure the cards are above the union shape */
-        transform: translate(0px, 50px);/* Ensure cards are above the SVG */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 cards per row */
+  grid-template-rows: auto;
+  /* Automatically adjust row heights */
+  row-gap: 50px;
+  /* Vertica spacing between rows */
+  column-gap: 70px;
+  /* Horizontal spacing between columns */
+  width: 90%;
+  /* Center the grid within the container */
+  margin: 0;
+  /* Center the grid horizontally */
+  z-index: 10;
+  /* Ensure the cards are above the union shape */
+  transform: translate(0px, 50px); /* Ensure cards are above the SVG */
 }
 
 /* Card Buttons */
 .expand-btn {
-    position: absolute;
-        /* Ensure the button is positioned relative to the card */
-        bottom: 20px;
-        /* Place it near the bottom */
-        right: 20px;
-        /* Place it near the right */
-        width: 35px;
-        /* Fixed size */
-        height: 35px;
-        /* Fixed size */
-        border-radius: 50%;
-        /* Make it a circle */
-        background-color: #fff;
-        /* White background */
-        border: none;
-        /* Remove border */
-        font-size: 1.5rem;
-        /* Size of the "+" */
-        color: #76202E;
-        /* Red "+" color */
-        cursor: pointer;
-        /* Pointer cursor for interactivity */
-        display: flex;
-        /* Center the "+" inside the button */
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        /* Optional shadow for better visibility */
-        z-index: 2;
+  position: absolute;
+  /* Ensure the button is positioned relative to the card */
+  bottom: 20px;
+  /* Place it near the bottom */
+  right: 20px;
+  /* Place it near the right */
+  width: 35px;
+  /* Fixed size */
+  height: 35px;
+  /* Fixed size */
+  border-radius: 50%;
+  /* Make it a circle */
+  background-color: #fff;
+  /* White background */
+  border: none;
+  /* Remove border */
+  font-size: 1.5rem;
+  /* Size of the "+" */
+  color: #76202e;
+  /* Red "+" color */
+  cursor: pointer;
+  /* Pointer cursor for interactivity */
+  display: flex;
+  /* Center the "+" inside the button */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Optional shadow for better visibility */
+  z-index: 2;
 }
 
 .expand-btn:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
 /* Reach Us Section */
 .contact {
-    background: #76202E; /* Match the body background color */
-    color: #ffffff;
-    text-align: left; /* Align text to the left */
-    padding: 3rem 2rem;
-    position: relative;
+  background: #76202e; /* Match the body background color */
+  color: #ffffff;
+  text-align: left; /* Align text to the left */
+  padding: 3rem 2rem;
+  position: relative;
 }
 
 .contact h2 {
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
-    position: absolute;
- /* Center vertically relative to its top position */
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  position: absolute;
+  /* Center vertically relative to its top position */
 }
 
 .red-line-right {
-    width: 38%; /* Corrected to use a valid width value */
-    height: 25px;
-    background: #76202E;
-    border-radius: 12.5px;
-    position: absolute;
-    top: 16%; 
-    left: calc(40% + 135px); /* Adjust to align horizontally with the text */
-    transform: translateY(-50%);
+  width: 38%; /* Corrected to use a valid width value */
+  height: 25px;
+  background: #76202e;
+  border-radius: 12.5px;
+  position: absolute;
+  top: 16%;
+  left: calc(40% + 135px); /* Adjust to align horizontally with the text */
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 768px) {
-    .red-line-right {
-        width: 38%;
-        height: 10px;
-        top: 3%;
-        left: 56%;
-        transform: translateY(-50%);
-    }
-    
+  .red-line-right {
+    width: 38%;
+    height: 10px;
+    top: 3%;
+    left: 56%;
+    transform: translateY(-50%);
+  }
 }
 
 .contact-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 4rem; /* Push the contact boxes lower */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem; /* Push the contact boxes lower */
 }
 
 @media screen and (max-width: 768px) {
-    .contact-container {
-        margin-top: 0rem !important; /* Remove margin on mobile */
-    }
-    
+  .contact-container {
+    margin-top: 0rem !important; /* Remove margin on mobile */
+  }
 }
 
 .contact-box {
-    margin-top: 100px;
-    background: #fff;
-    color: #76202E;
-    border-radius: 15px;
-    padding: 1rem;
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px;
-    text-align: left;
+  margin-top: 100px;
+  background: #fff;
+  color: #76202e;
+  border-radius: 15px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: left;
 }
 
-
 .contact-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    width: fit-content;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  width: fit-content;
 }
 
 .contact-box p {
-    margin: 0.5rem 0;
-    width: fit-content;
+  margin: 0.5rem 0;
+  width: fit-content;
 }
 
 .contact-box a {
-    color: #76202E;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+  color: #76202e;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .contact-box a img {
-    width: 24px;
-    height: 24px;
-    margin-right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
-    .contact-box {
-        margin-top: 10px !important; /* Remove margin on mobile */
-        left: 50% !important; /* Align to the left */
-        transform: translateX(-50%); /* Center the boxes */
-        margin: 0 auto !important; /* Center the boxes */
-        width: fit-content !important; /* Center the boxes */
-        height: fit-content !important; /* Center the boxes */
-    }
-    
+  .contact-box {
+    margin-top: 10px !important; /* Remove margin on mobile */
+    left: 50% !important; /* Align to the left */
+    transform: translateX(-50%); /* Center the boxes */
+    margin: 0 auto !important; /* Center the boxes */
+    width: fit-content !important; /* Center the boxes */
+    height: fit-content !important; /* Center the boxes */
+  }
 }
 
 .navigation-footer,
@@ -2220,5 +2658,54 @@ pointer-events: none;
 .footer-section,
 .contact-info,
 .footer-logos {
-    font-family: "Roboto Slab", serif !important;
+  font-family: "Roboto Slab", serif !important;
+}
+
+.join-section .join-wrapper .join-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 25px auto;
+  max-width: 1000px;
+  height: 100px;
+}
+
+.join-section .join-wrapper {
+  margin: 0 auto; /* Center horizontally */
+  max-width: 1000px; /* Ensure it doesn't exceed the max width */
+  text-align: center; /* Center-align text inside */
+}
+
+.join-section .join-wrapper .join-line {
+  flex: 1;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: none;
+}
+
+.center-btn {
+  width: 200px;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #591823;
+  background-color: #fff; /* Button background color */
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.center-btn:hover {
+  background-color: #591823; /* Darker shade on hover */
+  color: #fff; /* Change text color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.center-btn:active {
+  transform: scale(0.95); /* Slight shrink effect on click */
 }
