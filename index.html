@@ -196,21 +196,49 @@
         </div>
     </section>
 
+
+
     <!-- Job Offers Section (horizontal scroll) -->
     <section id="jobs" class="job-offers roboto-slab">
         <h2>Job Offers</h2>
+
+    <div class="company-filter-row" style="background-color: rgba(255,255,255,0.3); border-radius: 30px;">
+        <!-- Platinum Sponsors -->
+        <img src="assets/logos/company logos/Plat Sponsors/EY/EY_Logo_Beam_Tag_Horizontal_White_EN_U_RGB.png" alt="EY"
+            class="company-filter-logo" data-company="EY">
+        <img src="assets/logos/company logos/Plat Sponsors/NETCOMPANY/Netcompany- White Logo.svg" alt="Netcompany"
+            class="company-filter-logo" data-company="Netcompany">
+        <img src="assets/logos/company logos/Plat Sponsors/Sunlight/Sunlight logo.png" alt="Sunlight"
+            class="company-filter-logo" data-company="Sunlight">
+
+        <!-- Gold Sponsors -->
+        <img src="assets/logos/company logos/Gold Sponsors/KEBE_logo_secondary_en.png" alt="KEBE"
+            class="company-filter-logo" data-company="KEBE">
+        <img src="assets/logos/company logos/Gold Sponsors/thrace_logo_white.svg" alt="Thrace Group"
+            class="company-filter-logo" data-company="Thrace Group">
+        <img src="assets/logos/company logos/Gold Sponsors/Zephiros_Logokit_Digital_Horizontal_negative.png" alt="Zephiros"
+            class="company-filter-logo" data-company="Zephiros">
+        <img src="assets/logos/company logos/Gold Sponsors/Logo - ΙΩΝΙΚΗ Engineering.png" alt="ΙΩΝΙΚΗ Engineering"
+            class="company-filter-logo" data-company="ΙΩΝΙΚΗ Engineering">
+        <img src="assets/logos/company logos/Gold Sponsors/logo_prisma_electronics.png" alt="PRISMA ELECTRONICS SA"
+            class="company-filter-logo" data-company="PRISMA ELECTRONICS SA">
+
+        <!-- Show All -->
+        <img src="assets/logos/company logos/all.svg" alt="Show All" class="company-filter-logo" data-company="all">
+    </div>
         <div class="content-wrapper">
+        <button class="job-scroll-arrow left" aria-label="Scroll left">&#10094;</button>
         <div class="job-scroll">
             
             
-            <div class="job-card">
+            <div class="job-card" data-company="Thrace Group">
             <div class="job-text">
             <h3>Thrace Group</h3>
             <h4>Production Engineer</h4>
             <p style="margin-top: 20px;">Main requirements:</p>
-            <p>Πτυχίο Μηχανικού</p>
-            <p>Άριστη γνώση Αγγλικών</p>
-            <p>Γνώση ERP συστημάτων</p>
+            <p>-Πτυχίο Μηχανικού</p>
+            <p>-Άριστη γνώση Αγγλικών</p>
+            <p>-Γνώση ERP συστημάτων</p>
             </div>
             <img src="assets/logos/company logos/Gold Sponsors/thrace_logo_white.svg" alt="Company A">
             <button class="expand-btn"
@@ -224,14 +252,14 @@
             </div>
 
              
-            <div class="job-card">
+            <div class="job-card" data-company="Zephiros">
             <div class="job-text">
             <h3>Zephiros</h3>
             <h4>Τεχνικός Συντηρητής Ανεμογεννητριών</h4>
             <p style="margin-top: 20px;">Main requirements:</p>
-            <p>Ηλεκτρικά Συστήματα Τάσης</p>
-            <p>Διαγνωστικά & Μέτρηση</p>
-            <p>Συντήρηση κινητήρων & μετατροπέων</p>
+            <p>-Ηλεκτρικά Συστήματα Τάσης</p>
+            <p>-Διαγνωστικά & Μέτρηση</p>
+            <p>-Συντήρηση κινητήρων & μετατροπέων</p>
             </div>
             <img src="assets/logos/company logos/Gold Sponsors/Zephiros_Logokit_Digital_Horizontal.png" alt="Company B">
             <button class="expand-btn"
@@ -244,29 +272,50 @@
                             'https://companyB.com')">+</button>
             </div>
 
-            <!--
-
-            <div class="job-card">
+        
+            <div class="job-card" data-company="KEBE">
             <div class="job-text">
-            <h3>Company C</h3>
-            <h4>Data Scientist</h4>
-            <p style="margin-top: 20px;">Main requirements:</p>
-            <p>Python</p>
-            <p>Machine Learning</p>
-            <p>Statistics</p>
+            <h3>KEBE</h3>
+            <h4>Θέσεις εργασίας</h4>
+            <p style="margin-top: 20px;">-Μηχανικούς</p>
+            <p>-Μηχανικούς συντήρησης</p>
+            <p>-Αυτοματιστές παραγωγής</p>
+            <p>-Τεχνικό σύμβουλο πωλήσεων</p>
+            <p>-Ηλεκτρολόγους</p>
             </div>
-            <img src="company-c-logo.png" alt="Company C">
+            <img src="assets/logos/company logos/Gold Sponsors/KEBE_logo_secondary_en.png" alt="KEBE">
             <button class="expand-btn"
-                onclick="openJobModal('Company C', 
-                            'Data Scientist', 
-                            'Requirements: Python, Machine Learning, Statistics', 
-                            'Analyze large datasets, build predictive models, and optimize workflows.', 
-                            'company-c-logo.png', 
+                onclick="openJobModal('KEBE', 
+                            'Θέσεις εργασίας', 
+                            'Μηχανικούς /- Μηχανικούς συντήρησης /- Αυτοματιστές παραγωγής /- Τεχνικό σύμβουλο πωλήσεων /- Ηλεκτρολόγους', 
+                            'Για περισσότερες πληροφορίες επικοινωνίστε μαζί τους, μέσω της ιστοσελίδας τους.', 
+                            'assets/logos/company logos/Gold Sponsors/KEBE_logo_secondary_en.png', 
                             '', 
-                            'https://companyC.com')">+</button>
+                            'https://www.kebe-sa.gr/')">+</button>
             </div>
-            -->
+
+            <div class="job-card" data-company="ΙΩΝΙΚΗ Engineering">
+            <div class="job-text">
+            <h3>ΙΩΝΙΚΗ Engineering</h3>
+            <h4>Ηλεκτρολόγος Μηχανικός</h4>
+            <p style="margin-top: 20px;">Main requirements:</p>
+            <p>- Γνώση AutoCAD</p>
+            <p>- Γνώση υπολογιστικών προγραμμάτων (FINE 4M)</p>
+            </div>
+            <img src="assets/logos/company logos/Gold Sponsors/Logo - ΙΩΝΙΚΗ Engineering.png" alt="ΙΩΝΙΚΗ Engineering">
+            <button class="expand-btn" onclick="openJobModal('ΙΩΝΙΚΗ Engineering', 
+                            'Ηλεκτρολόγος Μηχανικός', 
+                            'Γνώση AutoCAD /- Γνώση υπολογιστικών προγραμμάτων (FINE 4M) /- Γνώση MS Office /- Πολύ καλή γνώση της αγγλικής γλώσσας και Η/Υ /- Τάξη, μεθοδικότητα και οργάνωση, υπολογιστικές ικανότητες, εχεμύθεια', 
+                            'Αρμοδιότητες: - Εκπόνηση ηλεκτρολογικών μελετών - Εκπόνηση μελετών φωτοβολταϊκών έργων', 
+                            'assets/logos/company logos/Gold Sponsors/Logo - ΙΩΝΙΚΗ Engineering.png', 
+                            '', 
+                            'https://www.ioniki.net/')">+</button>
+            </div>
+
+            
+
         </div>
+        <button class="job-scroll-arrow right" aria-label="Scroll right">&#10095;</button>
         </div>
     </section>
 
@@ -445,6 +494,19 @@
         </div>
     
     </section>
+
+    <!-- Special Thanks Section -->
+    <!-- <section id="special-thanks" class="special-thanks-section roboto-slab">
+        <h2>Also Supported by</h2>
+        <div class="special-thanks-bg">
+            
+            <div class="content-wrapper">
+                <a href="https://www.ioniki.com/el" target="_blank" rel="noopener">
+                    <img src="assets/logos/BARTER/IONIKI_FINAL_LOGO_HIGH_WEB_GRADIENT_NO_TAGLINE.png" alt="Example Barter Company" class="barter-logo">
+                </a>
+            </div>
+        </div>
+    </section> -->
 
     <!-- Contact Section -->
 
