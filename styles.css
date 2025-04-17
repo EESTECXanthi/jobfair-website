@@ -858,6 +858,13 @@ button.next:hover {
   justify-content: space-between;
 }
 
+.job-card,
+.job-card * {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 /* Alternate background colors using nth-child */
 .job-card:nth-child(odd) {
   background: #591823;
@@ -977,9 +984,12 @@ button.next:hover {
 
 /* Left image or logo area */
 .job-modal-logo img {
-  max-width: 100%;
+  max-width: 250px;
+  max-height: 100px;
+  width: auto;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: transform 0.2s;
   object-fit: contain;
 }
 
@@ -1092,10 +1102,47 @@ button.next:hover {
 
 /* Smooth grabbing cursor styling */
 .job-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 0 1rem;
   cursor: grab;
 }
 .job-scroll.grabbing {
   cursor: grabbing;
+}
+
+.job-scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: #76202e;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.job-scroll-arrow.left {
+  left: 0.5rem;
+}
+.job-scroll-arrow.right {
+  right: 0.5rem;
+}
+.job-scroll-arrow.active {
+  display: flex;
+}
+.job-scroll-arrow.disabled {
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 /* Contact Section */
@@ -2708,4 +2755,84 @@ footer a {
 
 .center-btn:active {
   transform: scale(0.95); /* Slight shrink effect on click */
+}
+
+.company-filter-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+.company-filter-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.company-filter-logo.active,
+.company-filter-logo:hover {
+  opacity: 1;
+  border-radius: 8px;
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.company-filter-logo[data-company="all"] {
+  text-align: center;
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center;
+}
+
+.special-thanks-section {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.special-thanks-section h2 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.special-thanks-bg {
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.4);
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+#special-thanks .content-wrapper {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+.special-thanks-section .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barter-logo {
+  max-width: 150px;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+.barter-logo:hover {
+  transform: scale(1.05);
 }

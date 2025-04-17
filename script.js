@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Inertia effect
         (function inertia() {
             jobScroll.scrollLeft -= velocity;
-            velocity *= 0.92;
+            velocity *= 0.8;
             if (Math.abs(velocity) > 0.5) {
                 animationFrameId = requestAnimationFrame(inertia);
             }
@@ -244,6 +244,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     window.toggleJobOfferDetails = toggleJobOfferDetails; // ensure global
+
+    /* ----------------- Filter Job Cards by Company ----------------- */
+    const filterLogos = document.querySelectorAll('.company-filter-logo');
+    const jobCards = document.querySelectorAll('.job-card');
+
+    filterLogos.forEach(logo => {
+        logo.addEventListener('click', function() {
+            // Remove active class from all
+            filterLogos.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+
+            const company = this.getAttribute('data-company');
+            jobCards.forEach(card => {
+                if (company === 'all' || card.getAttribute('data-company') === company) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Call updateArrows after filtering
+            if (typeof updateArrows === "function") updateArrows();
+        });
+    });
+
+    // Optionally, activate "all" by default
+    const allLogo = document.querySelector('.company-filter-logo[data-company="all"]');
+    if (allLogo) allLogo.click();
 });
 
 window.addEventListener("scroll", function() {
@@ -387,4 +415,56 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Start the auto-scroll
   startAutoScroll();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Target only the job offers section
+  const wrapper = document.querySelector('#jobs .content-wrapper');
+  if (!wrapper) return;
+  const scrollContainer = wrapper.querySelector('.job-scroll');
+  const leftBtn = wrapper.querySelector('.job-scroll-arrow.left');
+  const rightBtn = wrapper.querySelector('.job-scroll-arrow.right');
+  if (!scrollContainer || !leftBtn || !rightBtn) return;
+
+  function updateArrows() {
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    if (maxScroll > 5) { // threshold for floating point errors
+      leftBtn.classList.add('active');
+      rightBtn.classList.add('active');
+      leftBtn.classList.toggle('disabled', scrollContainer.scrollLeft <= 0);
+      rightBtn.classList.toggle('disabled', scrollContainer.scrollLeft >= maxScroll - 2);
+    } else {
+      leftBtn.classList.remove('active');
+      rightBtn.classList.remove('active');
+    }
+  }
+
+  function getScrollAmount() {
+  const card = scrollContainer.querySelector('.job-card');
+  if (!card) return 200;
+  // Get the gap from the parent flex container
+  const scrollStyles = getComputedStyle(scrollContainer);
+  let gap = parseInt(scrollStyles.gap || scrollStyles.columnGap || 0, 10);
+  if (isNaN(gap)) gap = 0;
+  const cardWidth = card.offsetWidth;
+  return window.innerWidth <= 768 ? (cardWidth + gap) + 5 : (cardWidth + gap) * 2;
+}
+
+  leftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
+  rightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+
+  scrollContainer.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+
+  // Optional: update on content changes
+  const observer = new MutationObserver(updateArrows);
+  observer.observe(scrollContainer, { childList: true, subtree: true });
+
+  // Initial check
+  updateArrows();
+  window.updateArrows = updateArrows;
 });
