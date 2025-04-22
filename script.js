@@ -98,8 +98,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /* modal for job offers */
 
-    function openJobModal(company, title, requirements, description, logoPath, pdfLink, siteLink) {
+    function openJobModal(company, title, requirements, description, logoPath, pdfLink, jobsitelink, siteLink) {
         const modal = document.getElementById("jobModal");
+        const logoImg = document.getElementById('jobModalLogo');
+        if (company === 'Netcompany') {
+            logoImg.classList.add('netcompany-logo-large');
+        } else {
+            logoImg.classList.remove('netcompany-logo-large');
+        }
         document.getElementById("jobModalLogo").src = logoPath;
         document.getElementById("jobModalLogo").alt = company;
         document.getElementById("jobModalTitle").textContent = title;
@@ -119,6 +125,17 @@ document.addEventListener("DOMContentLoaded", function() {
         if (pdfLink) {
             pdfElement.href = pdfLink;
             pdfElement.style.display = "inline-block";
+            pdfElement.textContent = "Download PDF";
+            pdfElement.setAttribute("download", ""); // Enable download
+            pdfElement.removeAttribute("target"); // Remove target for download
+            pdfElement.removeAttribute("rel"); // Remove rel for download
+        } else if (jobsitelink) {
+            pdfElement.href = jobsitelink;
+            pdfElement.style.display = "inline-block";
+            pdfElement.textContent = "Job Offer's Link";
+            pdfElement.removeAttribute("download"); // Disable download
+            pdfElement.setAttribute("target", "_blank"); // Open in new tab
+            pdfElement.setAttribute("rel", "noopener noreferrer"); // Security for new tab
         } else {
             pdfElement.style.display = "none";
         }
@@ -159,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Inertia effect
         (function inertia() {
             jobScroll.scrollLeft -= velocity;
-            velocity *= 0.92;
+            velocity *= 0.8;
             if (Math.abs(velocity) > 0.5) {
                 animationFrameId = requestAnimationFrame(inertia);
             }
@@ -244,6 +261,43 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     window.toggleJobOfferDetails = toggleJobOfferDetails; // ensure global
+
+    /* ----------------- Filter Job Cards by Company ----------------- */
+    const filterLogos = document.querySelectorAll('.company-filter-logo');
+    const jobCards = document.querySelectorAll('.job-card');
+
+    filterLogos.forEach(logo => {
+        logo.addEventListener('click', function() {
+            // Remove active class from all
+            filterLogos.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+
+            const company = this.getAttribute('data-company');
+            jobCards.forEach(card => {
+                if (company === 'all' || card.getAttribute('data-company') === company) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Reset horizontal scroll when "Show All" is clicked
+            if (company === 'all') {
+                const jobScroll = document.querySelector('.job-scroll');
+                if (jobScroll) jobScroll.scrollLeft = 0;
+            }
+
+            // Call updateArrows after filtering
+            if (typeof updateArrows === "function") updateArrows();
+
+            // Call stackJobCards after filtering
+            stackJobCards();
+        });
+    });
+
+    // Optionally, activate "all" by default
+    const allLogo = document.querySelector('.company-filter-logo[data-company="all"]');
+    if (allLogo) allLogo.click();
 });
 
 window.addEventListener("scroll", function() {
@@ -388,3 +442,112 @@ document.addEventListener("DOMContentLoaded", function() {
   // Start the auto-scroll
   startAutoScroll();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Target only the job offers section
+  const wrapper = document.querySelector('#jobs .content-wrapper');
+  if (!wrapper) return;
+  const scrollContainer = wrapper.querySelector('.job-scroll');
+  const leftBtn = wrapper.querySelector('.job-scroll-arrow.left');
+  const rightBtn = wrapper.querySelector('.job-scroll-arrow.right');
+  if (!scrollContainer || !leftBtn || !rightBtn) return;
+
+  function updateArrows() {
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    if (maxScroll > 5) { // threshold for floating point errors
+      leftBtn.classList.add('active');
+      rightBtn.classList.add('active');
+      leftBtn.classList.toggle('disabled', scrollContainer.scrollLeft <= 0);
+      rightBtn.classList.toggle('disabled', scrollContainer.scrollLeft >= maxScroll - 2);
+    } else {
+      leftBtn.classList.remove('active');
+      rightBtn.classList.remove('active');
+    }
+  }
+
+  function getScrollAmount() {
+  const card = scrollContainer.querySelector('.job-card');
+  if (!card) return 200;
+  // Get the gap from the parent flex container
+  const scrollStyles = getComputedStyle(scrollContainer);
+  let gap = parseInt(scrollStyles.gap || scrollStyles.columnGap || 0, 10);
+  if (isNaN(gap)) gap = 0;
+  const cardWidth = card.offsetWidth;
+  return window.innerWidth <= 768 ? (cardWidth + gap) + 5 : (cardWidth + gap) * 2;
+}
+
+  leftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
+  rightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+
+  scrollContainer.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+
+  // Optional: update on content changes
+  const observer = new MutationObserver(updateArrows);
+  observer.observe(scrollContainer, { childList: true, subtree: true });
+
+  // Initial check
+  updateArrows();
+  window.updateArrows = updateArrows;
+});
+
+function stackJobCards() {
+  const showAllActive = document.querySelector('.company-filter-logo[data-company="all"].active');
+  const jobScroll = document.querySelector('.job-scroll');
+  if (!jobScroll) return;
+
+  // Get all cards in original order
+  const allCards = Array.from(jobScroll.querySelectorAll('.job-card'));
+  // Remove all stacks and cards
+  document.querySelectorAll('.job-card-stack').forEach(stack => stack.remove());
+  allCards.forEach(card => card.remove());
+
+  if (!showAllActive) {
+    // Restore all cards in original order
+    allCards.forEach(card => jobScroll.appendChild(card));
+    return;
+  }
+
+  // Group cards by company
+  const groups = {};
+  allCards.forEach(card => {
+    const company = card.getAttribute('data-company');
+    if (!groups[company]) groups[company] = [];
+    groups[company].push(card);
+  });
+
+  // Re-insert in original order, stacking where needed
+  let i = 0;
+  while (i < allCards.length) {
+    const card = allCards[i];
+    const company = card.getAttribute('data-company');
+    const group = groups[company];
+    if (group && group.length > 1 && group[0] === card) {
+      // Stack all cards for this company
+      const stack = document.createElement('div');
+      stack.className = 'job-card-stack';
+      stack.setAttribute('data-company', company);
+      group.forEach(c => stack.appendChild(c));
+      jobScroll.appendChild(stack);
+
+      // Click to filter when stack is clicked
+      stack.addEventListener('click', function(e) {
+        // Find the filter logo for this company and trigger click
+        const logo = document.querySelector(`.company-filter-logo[data-company="${company}"]`);
+        if (logo) logo.click();
+        e.stopPropagation();
+      });
+
+      i += group.length;
+    } else if (!group || group.length === 1) {
+      jobScroll.appendChild(card);
+      i++;
+    } else {
+      i++;
+    }
+  }
+}
