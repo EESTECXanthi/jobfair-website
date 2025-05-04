@@ -880,10 +880,6 @@ button.next:hover {
     list-style-position: inside !important;
   }
 
-  .netcompany-logo-large {
-    transform: scale(1.2) !important;
-  }
-
   .job-modal-header h2 {
     font-size: 1.1rem !important;
     max-width: 100px !important;
@@ -1041,10 +1037,6 @@ button.next:hover {
   height: auto;
   transition: transform 0.2s;
   object-fit: contain;
-}
-
-.netcompany-logo-large {
-  transform: scale(2);
 }
 
 .job-modal-img img {

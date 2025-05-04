@@ -101,11 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function openJobModal(company, title, requirements, description, logoPath, pdfLink, jobsitelink, siteLink) {
         const modal = document.getElementById("jobModal");
         const logoImg = document.getElementById('jobModalLogo');
-        if (company === 'Netcompany') {
-            logoImg.classList.add('netcompany-logo-large');
-        } else {
-            logoImg.classList.remove('netcompany-logo-large');
-        }
         document.getElementById("jobModalLogo").src = logoPath;
         document.getElementById("jobModalLogo").alt = company;
         document.getElementById("jobModalTitle").textContent = title;
