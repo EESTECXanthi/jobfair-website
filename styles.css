@@ -2959,3 +2959,9 @@ footer a {
 .barter-logo:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .barter-logo {
+    margin-top: -150px;
+  }
+}
